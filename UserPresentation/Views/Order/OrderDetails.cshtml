@@ -1,0 +1,93 @@
+﻿@using DTOs.Orders
+@using DTOs.Paginated
+@model PaginatedList<OrderDetailsDTO>
+
+@{
+    ViewData["Title"] = "OrderDetails";
+    string[] productIds = ViewBag.ProductIds?.ToString()?
+        .Replace("[", "")  // Remove opening bracket
+        .Replace("]", "")  // Remove closing bracket
+        .Split(new[] { ',', ' ' }, StringSplitOptions.RemoveEmptyEntries); 
+}
+@section Styles {
+    <link href="~/css/OrderDetails.css" rel="stylesheet" />
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title">Order Details</h5>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Status</th>
+                                    <th scope="col">Total Quantity</th>
+                                    <th scope="col">Total Price</th>
+                                    <th scope="col">Created</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var order in Model)
+                                {
+                                    <tr>
+                                        <td>@order.Id</td>
+                                        <td>@order.Status</td>
+                                        <td>@order.TotalQuantity</td>
+                                        <td>@order.TotalAmount</td>
+                                        <td>@order.CreatedDate.ToShortDateString()</td>
+                                    </tr>
+                                    
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="pagination-container">
+                        <nav aria-label="Page navigation">
+                            <ul class="pagination justify-content-center">
+                                <li class="page-item @((!Model.PreviousPage) ? "disabled" : "")">
+                                    <a asp-action="OrderDetails" asp-route-PageNumber="@(Model.PageIndex - 1)" class="page-link @(Model.PreviousPage ? "" : "disabled")" aria-label="Previous">
+                                        <span aria-hidden="true">&laquo;</span>
+                                        <span class="sr-only">Previous</span>
+                                    </a>
+                                </li>
+                                @for (int i = 1; i <= Model.TotalPages; i++)
+                                {
+                                    <li class="page-item @(Model.PageIndex == i ? "active" : "")">
+                                        <a asp-action="OrderDetails"  asp-route-PageNumber="@i" class="page-link @(Model.PageIndex == i ? "active" : "")">@i</a>
+                                    </li>
+                                }
+                                <li class="page-item @((!Model.NextPage) ? "disabled" : "")">
+                                    <a asp-action="OrderDetails"  asp-route-PageNumber="@(Model.PageIndex + 1)" class="page-link @(Model.NextPage ? "" : "disabled")" aria-label="Next">
+                                        <span aria-hidden="true">&raquo;</span>
+                                        <span class="sr-only">Next</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="~/js/orderDetails.js"></script>
+    <script src="~/js/Cart.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            updateCart(@Html.Raw(Json.Serialize(ViewBag.ProductIds)));
+            updateCartQuantityDisplay();
+
+        });
+    </script>
+
+}

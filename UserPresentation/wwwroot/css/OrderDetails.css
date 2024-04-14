@@ -1,0 +1,62 @@
+﻿/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css?family=Assistant');
+
+/* Body Styles */
+body {
+    background-color: #f8f9fa; /* Light gray background */
+    font-family: 'Assistant', sans-serif; /* Use Google Font 'Assistant' */
+    margin: 0;
+    padding: 0;
+}
+
+/* Table Styles */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+}
+
+    .table th,
+    .table td {
+        padding: 12px 15px;
+        text-align: left;
+        vertical-align: middle;
+    }
+
+    .table thead {
+        background-color: #343a40; /* Dark gray header */
+        color: #fff; /* White text */
+    }
+
+    .table tbody tr:hover {
+        background-color: #f1f1f1; /* Light gray on hover */
+    }
+
+/* Toggle Button Styles */
+.toggle-btn {
+    width: 40px;
+    height: 21px;
+    background: #ced4da; /* Gray button */
+    border-radius: 50px;
+    padding: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition */
+}
+
+    .toggle-btn.active {
+        background: #007bff; /* Blue button when active */
+    }
+
+    .toggle-btn > .inner-circle {
+        width: 15px;
+        height: 15px;
+        background: #fff; /* White inner circle */
+        border-radius: 50%;
+        transition: margin-left 0.3s; /* Smooth transition */
+    }
+
+    .toggle-btn.active > .inner-circle {
+        margin-left: 19px; /* Move inner circle to indicate active state */
+    }

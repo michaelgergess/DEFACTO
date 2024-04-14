@@ -1,0 +1,158 @@
+﻿@{
+    bool isAuthenticated = User.Identity.IsAuthenticated;
+    var TotalPrice = ViewBag.TotalPrice;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OrderInfo</title>
+    <style>
+        /* General styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+
+        .order-info-container {
+            width: 80%;
+            margin: 20px auto;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .order-info-section {
+            padding: 20px;
+            border-bottom: 1px solid #ccc;
+        }
+
+            .order-info-section:last-child {
+                border-bottom: none;
+            }
+
+            .order-info-section h2 {
+                margin-top: 0;
+                font-size: 1.2em;
+                color: #333;
+            }
+
+            .order-info-section label {
+                display: block;
+                margin-bottom: 10px;
+                color: #555;
+            }
+
+            .order-info-section input[type="radio"] {
+                margin-right: 10px;
+            }
+
+            .order-info-section button {
+                background-color: black;
+                color: white;
+                border: none;
+                padding: 10px 20px;
+                border-radius: 5px;
+                cursor: pointer;
+                font-size: 1em;
+            }
+
+                .order-info-section button:hover {
+                    background-color: #333;
+                }
+
+        .smaller-font {
+            font-size: 0.8em;
+            color: #777;
+        }
+
+        /* Login/register message */
+        .login-register-message {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+            .login-register-message h1 {
+                font-size: 1.5em;
+                color: #333;
+            }
+    </style>
+</head>
+<body>
+
+    @if (!isAuthenticated)
+    {
+        <div class="login-register-message">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+            <script>
+                $(document).ready(function () {
+                    showLoginAndRegister();
+                });
+            </script>
+            <h1>Please Login To Complete Your Order Process</h1>
+        </div>
+    }
+    else
+    {
+        <form id="orderForm" action="CreateOrder" method="post" onsubmit="return validateForm()">
+
+            <div class="order-info-container">
+                <div class="order-info-section delivery-info">
+                    <h2>Delivery Information</h2>
+                    <label><input type="radio" name="deliverymethod" value="home-delivery" required> Home Delivery <span class="smaller-font">(40 USD)</span></label>
+                    <label><input type="radio" name="deliverymethod" value="click-collect" required> Click and Collect from the Branch <span class="smaller-font">(Free)</span></label>
+                </div>
+                <div class="order-info-section payment-info">
+                    <h2>Payment Information</h2>
+                    <label><input type="radio" name="paymentmethod" value="credit-card" required> Payment by Credit Card <span class="smaller-font">(Pay with a credit card and enjoy an additional discount)</span></label>
+                    <label><input type="radio" name="paymentmethod" value="cash" required> Payment on Receipt <span class="smaller-font">(15 USD)</span></label>
+                </div>
+                <div class="order-info-section order-summary">
+                    <h2>Order Summary</h2>
+                    <p>Total Amount:@TotalPrice  </p>
+                    <p>Subtotal: $@TotalPrice</p>
+                    <p>Shipping: $0</p>
+                    <p>Discount: $0</p>
+                    <p>The total includes VAT</p>
+                    <button type="submit" id="secure-payment-button">Proceed to Secure Payment</button>
+                </div>
+            </div>
+        </form>
+    }
+
+    <script>
+        function validateForm() {
+            var deliveryChecked = document.querySelector('input[name="deliverymethod"]:checked');
+            var paymentChecked = document.querySelector('input[name="paymentmethod"]:checked');
+
+            if (!deliveryChecked) {
+                showAlert("Please select a delivery method.");
+                return false;
+            }
+
+            if (!paymentChecked) {
+                showAlert("Please select a payment method.");
+                return false;
+            }
+
+            return true;
+        }
+
+        function showAlert(message) {
+            var alertDiv = document.createElement('div');
+            alertDiv.classList.add('alert');
+            alertDiv.textContent = message;
+            document.querySelector('.order-info-container').prepend(alertDiv);
+            setTimeout(function () {
+                alertDiv.style.display = 'none';
+            }, 3000);
+        }
+    </script>
+
+</body>
+</html>
