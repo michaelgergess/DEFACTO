@@ -95,40 +95,6 @@ function updateIsSelected(checkbox, index, productId) {
     selectedItemsInput.value = checkbox.checked;
    
 }
-// Function to update the total price based on the isChecked status and product ID
-//// Function to update the total price based on the isChecked status and product ID
-//function updateTotalPrice(isChecked, productId) {
-//    var totalPriceElement = document.getElementById("total-price-" + productId);
-//    var totalPriceElementValue = parseFloat(document.getElementById("total_price").textContent.trim()) || 0;
-//    var quantityInput = document.getElementById("OrderQuantity-" + productId); // Get the quantity input element
-//    var quantity = parseInt(quantityInput.value);
-//    var basePrice = getBasePrice(productId);
-
-//    // Calculate the total price
-//    var totalPrice = quantity * basePrice;
-//    if (isChecked) {
-//        totalPriceElementValue += totalPrice;
-//    } else {
-//        totalPriceElementValue -= totalPrice;
-//    }
-
-//    totalPriceElement.textContent = "$" + totalPrice.toFixed(2);
-//    document.getElementById("total_price").textContent = totalPriceElementValue.toFixed(2);
-//}
-
-//// Function to handle changes in the quantity input
-//function handleQuantityChange(productId) {
-//    var quantityInput = document.getElementById("OrderQuantity-" + productId);
-//    quantityInput.addEventListener("change", function () {
-//        // Call updateTotalPrice function when the quantity input changes
-//        updateTotalPrice(false, productId); // Set isChecked to false assuming the checkbox is unchecked
-//    });
-//}
-
-// Example usage:
-// Call handleQuantityChange function for each product where the quantity input might change
-
-
 
 
 

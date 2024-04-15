@@ -16,8 +16,6 @@
                         <input type="hidden" id="i-@pro.Id" value="@pro.Id"> <!-- Unique id for each input -->
                         <input type="hidden" id="quantity-@pro.Id" value="0"> <!-- Unique id for each input -->
                         <input type="hidden" id="price-@pro.Id" value="0"> <!-- Unique id for each input -->
-                        <input type="hidden" id="OrderQuantity-@pro.Id" name="selectedItems[@i].QuantityOfItem" value="1" onchange="handleQuantityChange(@pro.Id)">
-
                         <div class="product-card">
                             <div class="row align-items-center">
                                 <div class="col-md-1">
@@ -46,9 +44,12 @@
                                             </select>
                                         </div>
                                         <div class="quantity-controls mb-2">
-                                        <button class="btn btn-outline-secondary" type="button" onclick="decrementQuantity(this, @pro.Id);event.stopPropagation();">-</button>
-                                            <span class="quantity-text">Quantity 1</span>
-                                        <button class="btn btn-outline-secondary" type="button" onclick="incrementQuantity(this, @pro.Id);event.stopPropagation();">+</button>
+                                        <button class="btn btn-outline-secondary" type="button" onclick="decrementQuantity(this, @pro.Id);">-</button>
+                                        <div style="padding: 7%" >
+                                                Quantity <input type="text" style="border:0;width:25px" readonly id="OrderQuantity-@pro.Id" name="selectedItems[@i].QuantityOfItem" value="1">
+                                            </div>
+                                             <span class="quantity-text" id="quantity-text-@pro.Id" hidden>Quantity 1</span> 
+                                            <button class="btn btn-outline-secondary"  type="button" onclick="incrementQuantity(this, @pro.Id); ">+</button>
                                         </div>
                                     </div>
                                 </div>
@@ -89,35 +90,47 @@
 
 <script>
     $(document).ready(function () {
+        // Loop through each color select element
         $('.form-select[name="color"]').each(function () {
             var productId = $(this).attr('id').split('-')[1];
-            getSizes(productId);
+            updateQuantityText(productId); // Update quantity text for this product
+            getSizes(productId); // Fetch sizes for this product
         });
 
+        // Handle color change event
         $('.form-select[name="color"]').change(function () {
             var productId = $(this).attr('id').split('-')[1];
-            getSizes(productId);
+            updateQuantityText(productId); // Update quantity text for this product
+            getSizes(productId); // Fetch sizes for this product
         });
+
+        // Handle size change event
         $('.form-select[name="size"]').change(function () {
-            $('.quantity-text').text('Quantity 1');
             var productId = $(this).attr('id').split('-')[1];
             var colorName = $("#color-" + productId + " option:selected").val();
-            getQuantityAndPrice(productId, colorName)
+            getQuantityAndPrice(productId, colorName); // Fetch quantity and price
+            updateQuantityText(productId); // Update quantity text for this product
         });
-
-
-
-     
     });
+
+    function updateQuantityText(productId) {
+        var quantityInput = $("#OrderQuantity-" + productId); // Get the quantity input element
+        quantityInput.val(1); // Set the value of the input element to 1
+
+
+    }
+
+
+
     function showTemporaryAlert(message) {
-        $("#temporaryAlertMessage").text(message); // Set the alert message
-        $("#temporaryAlert").fadeIn(); // Show the alert
+        $("#temporaryAlertMessage").text(message);
+        $("#temporaryAlert").fadeIn();
         setTimeout(function () {
-            $("#temporaryAlert").fadeOut(); // Hide the alert after 5 seconds
+            $("#temporaryAlert").fadeOut();
         }, 2000);
     }
+
     function validateForm() {
-        console.log("validateForm called"); // Debugging statement
         var form = document.getElementById('orderForm');
         var checkboxes = form.querySelectorAll('input[type="checkbox"]');
         var checked = false;
@@ -132,7 +145,7 @@
         }
         return true;
     }
-    
+
 
 </script>
 

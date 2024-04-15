@@ -82,18 +82,37 @@ namespace UserPresentation.Controllers
                 }
             }
             return NotFound();
-
         }
 
         public async Task<IActionResult> OrderInfo(List<OrderItemDTO> selectedItems)
         {
-            byte[] selectedItemsBytes = JsonSerializer.SerializeToUtf8Bytes(selectedItems);
-            HttpContext.Session.Set("SelectedItems", selectedItemsBytes);
+            if (!selectedItems.Any())
+            {
+                byte[] selectedItemsBytes = HttpContext.Session.Get("SelectedItems");
+
+                if (selectedItemsBytes != null)
+                {
+                    selectedItems = JsonSerializer.Deserialize<List<OrderItemDTO>>(selectedItemsBytes);
+                }
+                else
+                {
+                    selectedItems = new List<OrderItemDTO>();
+                }
+            }
+            else
+            {
+                // If selectedItems is not null, serialize and store it in the session
+                byte[] selectedItemsBytes = JsonSerializer.SerializeToUtf8Bytes(selectedItems);
+                HttpContext.Session.Set("SelectedItems", selectedItemsBytes);
+            }
+
+            // Continue with the rest of your logic
             var ItemsSelected = await _orderService.FilterItemBySelected(selectedItems);
             var TotalPrice = await _orderService.GetTotalPrice(ItemsSelected);
             ViewBag.TotalPrice = TotalPrice;
             return View();
         }
+
         public async Task<IActionResult> OrderDetails(int PageNumber)
         {
             var user = await _UserManager.FindByNameAsync(User.Identity.Name);
@@ -135,7 +154,7 @@ namespace UserPresentation.Controllers
                         var cartsBytes = Encoding.UTF8.GetBytes(cartsJson);
 
                         HttpContext.Session.Set("Carts", cartsBytes);
-                        var OrdersCreated = await _orderService.CreateOrder(selectedItems, user.Id);
+                        var OrdersCreated = await _orderService.CreateOrder(ItemsSelected, user.Id);
                    return RedirectToAction("OrderDetails");
                     } }
             }
