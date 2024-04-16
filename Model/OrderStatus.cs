@@ -16,4 +16,14 @@ namespace Model
         PendingPayment,
         Returned
     }
+    //public enum OrderStatusAr
+    //{
+    //    تم_الشحن = 0,
+    //    تم_التسليم  = 1,
+    //    جاري_الشحن = 2,
+    //    ملغي = 3,
+    //    وضعت,
+    //    في_انتظار_الدفع,
+    //    مرتجع
+    //}
 }

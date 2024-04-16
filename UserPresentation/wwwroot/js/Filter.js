@@ -111,10 +111,11 @@ function ModelFilter(PageNumber = 1) {
         success: function (data) {
             $('#partial').html(data);
 
+
         },
         error: function () {
             alert('Error');
         }
     });
-
+  
 }

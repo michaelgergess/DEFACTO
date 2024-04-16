@@ -18,6 +18,8 @@ namespace Application.Contracts
         Task<List<GetCart>> GetAllProductsInCartAsyncBy(List<int> ProductId);
         Task<GetQuntityAndPrice> GetQuantityBy(int ProductId, string ColorName, string SizeName);
         Task<List<string>> GetAllSizesBy(int ProductId, string ColorName);
+        Task<List<string>> GetAllColorsBy(int ProductId, string SizeName);
+        Task<Product> GetProducAllDataByIDAsync(int proID);
         Task<int> GetProductIdsBY(OrderItemDTO orderItemDTO);
     }
 }

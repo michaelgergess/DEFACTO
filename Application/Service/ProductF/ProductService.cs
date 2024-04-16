@@ -20,8 +20,9 @@ using System.Linq;
 
 using Newtonsoft.Json;
 using DTOs.Orders;
+using DTOs.Review;
 
-namespace Ecommerce.Application.Services
+namespace Application.Services
 {
     public class ProductService : IProductService
     {
@@ -71,7 +72,7 @@ namespace Ecommerce.Application.Services
                 return emptylist;
             }
 
-            var AlldAta = (await _productRepository.GetAllAsync()).Include(x => x.category).Include(c => c.User);
+            var AlldAta = (await _productRepository.GetAllAsync()).Include(x=>x.images).Include(x => x.category).Include(c => c.User);
             var Prds = AlldAta.Where(p=>p.categoryID == catId && (p.IsDeleted == false || p.IsDeleted == null))
                 .Skip(items * (pagenumber - 1)).Take(items).ToList();
 
@@ -471,6 +472,73 @@ namespace Ecommerce.Application.Services
             resultDataList.Count = AlldAta.Count();
             return resultDataList;
         }
+        public static string MaskString(string text)
+        {
+            if (text.Length <= 1)
+            {
+                return text; // Handle case where string length is 0 or 1
+            }
+           var strg = (text[0] + text[2].ToString() +new string('*', text.Length - 2));
+            return strg;
+        }
+        public async Task<ResultView<ProductDetailsDTO>> GetProductDetails(int productId)
+        {
+
+            // var product = await _productRepository.GetByIdAsync(productId);
+            var prd = await _productRepository.GetProducAllDataByIDAsync(productId);
+            if (prd == null)
+            {
+                return new ResultView<ProductDetailsDTO>
+                {
+                    Entity = null,
+                    IsSuccess = false,
+                    Message = " not found"
+                };
+            }
+            var product = _mapper.Map<ProductDetailsDTO>(prd);
+            product.Sizes = prd.items.Select(x=>x.size).Distinct().ToList();
+            product.Colors = prd.items.Select(x=>x.color).Distinct().ToList();
+            product.productReviewLists = prd.productReviews.Select
+                (r => new ProductReviewListDTO
+                {
+                    CustomerName = MaskString(prd.productReviews.FirstOrDefault().User.UserName),
+                    productID = r.productID,
+                    ReviewMessage = r.ReviewMessage,
+                    ReviewRate = r.ReviewRate
+                }).ToList();
+            product.ImagesArr = new string[4];
+            if (prd.images.Count() >= 1)
+            {
+                var img1 = (prd.images.FirstOrDefault().imagepath) ?? string.Empty;
+                product.ImagesArr[0] = img1;
+
+                if (prd.images.Count() >= 2)
+                {
+                    var img2 = prd.images.Skip(1).FirstOrDefault().imagepath ?? string.Empty;
+                    product.ImagesArr[1] = img2;
+
+                    if (prd.images.Count() >= 3)
+                    {
+                        var img3 = prd.images.Skip(2).FirstOrDefault().imagepath ?? string.Empty;
+                        product.ImagesArr[2] = img3;
+
+                        if (prd.images.Count() >= 3)
+                        {
+                            var img4 = prd.images.Skip(2).FirstOrDefault().imagepath ?? string.Empty;
+                            product.ImagesArr[3] = img4;
+                        }
+                    }
+                }
+
+            }
+
+            return new ResultView<ProductDetailsDTO>
+            {
+                Entity = product,
+                IsSuccess = true,
+                Message = "successfull"
+            };
+        }
 
         public async Task<ResultDataList<ProductDTO>> GeProductsByVendorID(int items, int pagenumber, string VendorOrAdminID)
         {
@@ -555,8 +623,6 @@ namespace Ecommerce.Application.Services
 
             return result;
         }
-
-
         public async Task<ResultDataList<GetCart>> ProductsInCart(List<string> ProductIds)
         {
             var result = new ResultDataList<GetCart>();
@@ -593,7 +659,18 @@ namespace Ecommerce.Application.Services
                 return res;
 
            }
-          throw new NotImplementedException();
+            return null;
+        }      
+        public async Task<List<string>> GetProductsColorsBy(int ProductId, string sizeName)
+        {
+
+           if (ProductId > 0 && sizeName is not null)
+           {
+               var res = await _productRepository.GetAllSizesBy(ProductId, sizeName);
+                return res;
+
+           }
+            return null;
         }
         public async Task<GetQuntityAndPrice> GetProductsQuantityBy(int ProductId, string ColorName,string SizeName)
         {

@@ -117,7 +117,55 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Berts" xml:space="preserve">
+    <value>Berts</value>
+  </data>
+  <data name="Favorite" xml:space="preserve">
+    <value>Favorite</value>
+  </data>
+  <data name="Homewear" xml:space="preserve">
+    <value>Homewear</value>
+  </data>
+  <data name="Jeans" xml:space="preserve">
+    <value>Jeans</value>
+  </data>
+  <data name="Kids Jackets" xml:space="preserve">
+    <value>Kids Jackets</value>
+  </data>
+  <data name="Kids Shoes" xml:space="preserve">
+    <value>Kids Shoes</value>
+  </data>
+  <data name="Kids Studio" xml:space="preserve">
+    <value>Kids Studio</value>
+  </data>
+  <data name="Last Visited" xml:space="preserve">
+    <value>Last Visited</value>
+  </data>
+  <data name="Outerwears" xml:space="preserve">
+    <value>Outerwears</value>
+  </data>
   <data name="POPULAR" xml:space="preserve">
     <value>POPULAR CATEGORIES</value>
+  </data>
+  <data name="Ramadan Sale" xml:space="preserve">
+    <value>Ramadan Sale</value>
+  </data>
+  <data name="Shirts" xml:space="preserve">
+    <value>Shirts</value>
+  </data>
+  <data name="Special Products For You" xml:space="preserve">
+    <value>Special Products For You</value>
+  </data>
+  <data name="Sweatpants" xml:space="preserve">
+    <value>Sweatpants</value>
+  </data>
+  <data name="SweatShirts" xml:space="preserve">
+    <value>SweatShirts</value>
+  </data>
+  <data name="Trousers" xml:space="preserve">
+    <value>Trousers</value>
+  </data>
+  <data name="Where are you looking for this?" xml:space="preserve">
+    <value>Where are you looking for this?</value>
   </data>
 </root>

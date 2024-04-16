@@ -1,4 +1,31 @@
-﻿@{
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@using System.Globalization
+@inject IViewLocalizer Localizer
+@{
+    ViewData["Title"] = "Cart";
+    string url = Context.Request.Path;
+    if (url == "/")
+    {
+        url = "/home/index";
+    }
+
+    var lan = "en";
+    var direction = "ltr";
+    var arrowNext = "right";
+    var arrowPerv = "left";
+
+
+    if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
+    {
+        lan = "ar";
+        direction = "rtl";
+        arrowNext = "left";
+        arrowPerv = "right";
+
+    }
+
+}
+@{
     bool isAuthenticated = User.Identity.IsAuthenticated;
     var TotalPrice = ViewBag.TotalPrice;
 }
@@ -8,7 +35,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OrderInfo</title>
+    <title>@Localizer["OrderInfo"]</title>
     <style>
         /* General styles */
         body {
@@ -94,7 +121,7 @@
                     SHowLoginAndRegester();
                 });
             </script>
-            <h1>Please Login To Complete Your Order Process</h1>
+            <h1>@Localizer["Please Login To Complete Your Order Process"]</h1>
         </div>
     }
     else
@@ -103,23 +130,23 @@
 
             <div class="order-info-container">
                 <div class="order-info-section delivery-info">
-                    <h2>Delivery Information</h2>
-                    <label><input type="radio" name="deliverymethod" value="home-delivery" required> Home Delivery <span class="smaller-font">(40 USD)</span></label>
-                    <label><input type="radio" name="deliverymethod" value="click-collect" required> Click and Collect from the Branch <span class="smaller-font">(Free)</span></label>
+                    <h2>@Localizer["Delivery Information"]</h2>
+                    <label><input type="radio" name="deliverymethod" value="home-delivery" required> @Localizer["Home Delivery"]<span class="smaller-font">@Localizer["(40 USD)"]</span></label>
+                    <label><input type="radio" name="deliverymethod" value="click-collect" required> @Localizer["Click and Collect from the Branch"] <span class="smaller-font">@Localizer["(Free)"]</span></label>
                 </div>
                 <div class="order-info-section payment-info">
-                    <h2>Payment Information</h2>
-                    <label><input type="radio" name="paymentmethod" value="credit-card" required> Payment by Credit Card <span class="smaller-font">(Pay with a credit card and enjoy an additional discount)</span></label>
-                    <label><input type="radio" name="paymentmethod" value="cash" required> Payment on Receipt <span class="smaller-font">(15 USD)</span></label>
+                    <h2>@Localizer["Payment Information"]</h2>
+                    <label><input type="radio" name="paymentmethod" value="credit-card" required>@Localizer["Payment by Credit Card"] <span class="smaller-font">(@Localizer["Pay with a credit card and enjoy an additional discount"])</span></label>
+                    <label><input type="radio" name="paymentmethod" value="cash" required>@Localizer["Payment on Receipt"] <span class="smaller-font">@Localizer["(15 USD)"]</span></label>
                 </div>
                 <div class="order-info-section order-summary">
-                    <h2>Order Summary</h2>
-                    <p>Total Amount:@TotalPrice  </p>
-                    <p>Subtotal: $@TotalPrice</p>
-                    <p>Shipping: $0</p>
-                    <p>Discount: $0</p>
-                    <p>The total includes VAT</p>
-                    <button type="submit" id="secure-payment-button">Proceed to Secure Payment</button>
+                    <h2>@Localizer["Order Summary"]</h2>
+                    <p>@Localizer["Total Amount"]:@TotalPrice  </p>
+                    <p>@Localizer["Subtotal"]: $@TotalPrice</p>
+                    <p>@Localizer["Shipping"]: $0</p>
+                    <p>@Localizer["Discount"]: $0</p>
+                    <p>@Localizer["The total includes VAT"]</p>
+                    <button type="submit" id="secure-payment-button">@Localizer["Proceed to Secure Payment"]</button>
                 </div>
             </div>
         </form>
@@ -131,12 +158,12 @@
             var paymentChecked = document.querySelector('input[name="paymentmethod"]:checked');
 
             if (!deliveryChecked) {
-                showAlert("Please select a delivery method.");
+                showAlert(@Localizer["Please select a delivery method"]);
                 return false;
             }
 
             if (!paymentChecked) {
-                showAlert("Please select a payment method.");
+                showAlert(@Localizer["Please select a payment method"]);
                 return false;
             }
 

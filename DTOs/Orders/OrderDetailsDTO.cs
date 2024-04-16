@@ -11,7 +11,8 @@ namespace DTOs.Orders
     {
         public int Id { get; init; }
         public OrderStatus Status { get; init; }
-        public decimal TotalAmount { get; init; }
+        //public OrderStatusAr StatusAr { get; init; } 
+        public decimal TotalAmount { get; init; } 
         public int TotalQuantity { get; init; }
         public DateTime CreatedDate { get; init; }
     }

@@ -8,7 +8,6 @@ using Application.Service.Order;
 using Application.Service.User;
 using Application.Services;
 using Context;
-using Ecommerce.Application.Services;
 using Infrastructure;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;

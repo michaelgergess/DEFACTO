@@ -156,6 +156,9 @@
   <data name="Gender" xml:space="preserve">
     <value>Gender</value>
   </data>
+  <data name="Go To Cart" xml:space="preserve">
+    <value>Go To Cart</value>
+  </data>
   <data name="Gray" xml:space="preserve">
     <value>Gray</value>
   </data>
@@ -185,6 +188,9 @@
   </data>
   <data name="Pink" xml:space="preserve">
     <value>Pink</value>
+  </data>
+  <data name="PRODUCT ADDED" xml:space="preserve">
+    <value>PRODUCT ADDED TO CART</value>
   </data>
   <data name="Red" xml:space="preserve">
     <value>Red</value>

@@ -54,9 +54,9 @@
     </button>
 </div>
 <div class="mt-5 mb-5">
-       <a asp-action="ProductsFilter" asp-controller="product" asp-route-subCategory="2">
+    <a asp-action="ProductsFilter" asp-controller="product" asp-route-subCategory="2">
         <img src="~/images/woman.webp" alt="" class="d-block w-100">
-       </a>
+    </a>
 </div>
 <div>
     <a asp-action="ProductsFilter" asp-controller="product" asp-route-subCategory="2">
@@ -84,20 +84,20 @@
     </a>
 </div>
 
- 
+
 <div style="display: flex; justify-content: space-between;">
-        <a asp-action="ProductsFilter" asp-controller="product" asp-route-subCategory="2" class="content4">
-            <img src="~/images/galwoma1.webp" alt="" >
-        </a>
-        <a asp-action="ProductsFilter" asp-controller="product" asp-route-subCategory="2" class="content4">
-            <img src="~/images/galwoma2.webp" alt="" >
-        </a>
-        <a asp-action="ProductsFilter" asp-controller="product" asp-route-subCategory="2" class="content4">
-            <img src="~/images/galwoma3.webp" alt="" >
-        </a>
-        <a asp-action="ProductsFilter" asp-controller="product" asp-route-subCategory="2" class="content4">
-            <img src="~/images/galwoma4.webp" alt="" >
-        </a>
+    <a asp-action="ProductsFilter" asp-controller="product" asp-route-subCategory="2" class="content4">
+        <img src="~/images/galwoma1.webp" alt="" >
+    </a>
+    <a asp-action="ProductsFilter" asp-controller="product" asp-route-subCategory="2" class="content4">
+        <img src="~/images/galwoma2.webp" alt="" >
+    </a>
+    <a asp-action="ProductsFilter" asp-controller="product" asp-route-subCategory="2" class="content4">
+        <img src="~/images/galwoma3.webp" alt="" >
+    </a>
+    <a asp-action="ProductsFilter" asp-controller="product" asp-route-subCategory="2" class="content4">
+        <img src="~/images/galwoma4.webp" alt="" >
+    </a>
 
 </div>
 
@@ -139,8 +139,8 @@
     <a asp-action="ProductsFilter" asp-controller="product" asp-route-subCategory="2" class="content4">
         <img src="~/images/sec2wom4.webp" >
     </a>
-       
-   
+
+
 </div>
 
 <div id="carouselExampleControlsNoTouching4" class="carousel slide mt-4 mb-4" data-bs-touch="false" data-bs-swipe="false">
@@ -179,7 +179,7 @@
     <a asp-action="ProductsFilter" asp-controller="product" asp-route-subCategory="2" class="content4">
         <img src="~/images/accessory4.webp">
     </a>
-    
+
 </div>
 
 <div id="carouselExampleControlsNoTouching3" class="carousel slide mt-5 mb-5" data-bs-touch="false" data-bs-swipe="false">
@@ -203,7 +203,7 @@
         <span class="visually-hidden">Next</span>
     </button>
 </div>
-<p class="mt-3 mb-3 ms-3 titles"> @Localizer["Favorite"]</p>
+<h4 class="mt-3 mb-3 ms-3"> @Localizer["Favorite"]</h4>
 @*   partial view *@
 <span class="me-5 m-3 "> @Localizer["Special"]</span>
 <span class="me-5 m-3 ">@Localizer["Favorite_1"]</span>
@@ -238,14 +238,14 @@
                         <a asp-action="ProductsFilter" asp-controller="product" asp-route-catName="@item.Name" class="swiper-slide swiper-slide-active">@item.Name</a>
                     }
                 }
-               
+
             </div>
         </div>
     </div>
 </section>
 
 @* Local storge here  *@
-<p class="mt-4 mb-3 ms-2 titles">@Localizer["POPULAR"]</p>
+<h4 class="mt-4 mb-3 ms-2 ">@Localizer["POPULAR"]</h4>
 
 <div id="carouselExampleIndicators5" class="carousel slide container-fluid" data-bs-ride="carousel" data-bs-interval="2500">
     <div class="carousel-inner">
@@ -324,72 +324,63 @@
     </div>
 
     <div>
-        <h4 class="mb-2">Women's Dresses: Effortless Elegance</h4>
+        <h4 class="mb-2">@Localizer["Women's Dresses: Effortless Elegance"]</h4>
         <p id="description">
-            Step into elegance with our diverse collection of women's dresses. 
-            From sophisticated evening gowns to casual sundresses, we have something for
-            every occasion. Whether you're attending a formal event or simply want
-            to elevate your everyday look, our range of women's dresses offers versatility and style.
+            @Localizer["womanh3"]
         </p>
     </div>
     <div>
-        <h4 class="mb-2">Women's Clothes Sale: Unbeatable Deals</h4>
+        <h4 class="mb-2">@Localizer["Women's Clothes Sale: Unbeatable Deals"]</h4>
         <p id="description">
-            Who says you have to break the bank to look fabulous? Explore our women's clothes 
-            sale section and discover unbeatable deals on trendy apparel. Shop to your heart's 
-            content without worrying about your budget. With discounts
-            on a wide range of clothing items, updating your wardrobe has never been more affordable.
+            @Localizer["womanh4"]
         </p>
     </div>
 
  
     <div>
-        <h4 class="mb-2">Women's Clothing Stores: Your One-Stop Shop</h4>
+        <h4 class="mb-2">@Localizer["Women's Clothing Stores: Your One-Stop Shop"]</h4>
         <p id="description">
-            Experience the ultimate shopping convenience with our online women's clothing store. 
-            Browse our extensive collection from the comfort of your own home and discover the 
-            latest trends at your fingertips.
-            With easy navigation and secure checkout, shopping for women's clothing has never been easier.
+            @Localizer["womanh5"]
         </p>
     </div>
 
     <div>
-        <h4 class="mb-2">Women's Casual Comfort</h4>
+        <h4 class="mb-2">@Localizer["Women's Casual Comfort"]</h4>
         <p id="description">
-            Stay comfortable and stylish with our collection of women's t-shirts. Whether you're running errands or lounging at home, our soft and breathable t-shirts are the perfect choice for any casual occasion. Available in a variety of colors and designs, they're a wardrobe essential for every woman.
+            @Localizer["womanh6"]
         </p>
     </div>
     <div>
-        <h4 class="mb-2">Women Sporty Elegance</h4>
+        <h4 class="mb-2">@Localizer["Women Sporty Elegance"]</h4>
         <p id="description">
-            Achieve a sporty yet sophisticated look with our women's polo shirts. Made from high-quality materials and featuring timeless designs, our polo shirts offer both style and comfort. Whether you're hitting the golf course or enjoying a weekend outing, our polo shirts are a versatile addition to any wardrobe.
+            @Localizer["womanh7"]
         </p>
     </div>
     <div>
-        <h4 class="mb-2">Women's Effortless Sophistication</h4>
+        <h4 class="mb-2">@Localizer["Women's Effortless Sophistication"]</h4>
         <p id="description">
-            Upgrade your wardrobe with our collection of women's trousers. From tailored trousers for the office to relaxed joggers for weekends, we offer a wide range of styles to suit every preference. With attention to detail and impeccable craftsmanship, our trousers exude effortless sophistication
-        </p>
+            @Localizer["womanh8"]
+                </p>
     </div>
     
     <div>
-        <h4 class="mb-2">Women Power Dressing</h4>
+        <h4 class="mb-2">@Localizer["Women Power Dressing"]</h4>
         <p id="description">
-            Make a statement with our collection of women's blazers. Whether you're dressing for the boardroom or a night out, our blazers add polish and sophistication to any outfit. With a variety of colors and cuts to choose from, you're sure to find the perfect blazer to elevate your look.
+            @Localizer["womanh9"]
         </p>
     </div>
 
     <div>
-        <h4 class="mb-2">Women's Apparel: Style Redefined</h4>
+        <h4 class="mb-2">@Localizer["Women's Apparel: Style Redefined"]</h4>
         <p id="description">
-            At DeFacto, we believe that every woman deserves to feel confident and beautiful in her clothing. That's why we offer a curated selection of women's apparel that combines style, comfort, and quality. Shop with us today and discover a new level of style redefined.
+            @Localizer["womanh10"]
         </p>
     </div>
 
     <div>
-        <h4 class="mb-2">Discover the Convenience of Women's Online Clothing Stores</h4>
+        <h4 class="mb-2">@Localizer["Discover the Convenience of Women's Online Clothing Stores"]</h4>
         <p id="description">
-            Experience the ultimate convenience of shopping for women's fashion at our online clothing store. With just a few clicks, you can browse through our extensive collection of coats and other apparel, finding the perfect pieces to elevate your style. Enjoy the ease of shopping from the comfort of your own home and take advantage of our secure checkout process for a hassle-free shopping experience. At DeFacto, we bring the latest trends right to your fingertips, making it easier than ever to stay stylish all year round.
+            @Localizer["womanh11"]
         </p>
 
     </div>

@@ -117,13 +117,52 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Baby Boy Berets" xml:space="preserve">
+    <value>قبعات أولادي حديثي الولادة</value>
+  </data>
+  <data name="Baby Boy Newborn" xml:space="preserve">
+    <value>ملابس ولادي حديثي الولادة</value>
+  </data>
+  <data name="Baby Boy Set" xml:space="preserve">
+    <value>ملابس أطفال حديثي الولادة </value>
+  </data>
+  <data name="Baby Boy SweatPants" xml:space="preserve">
+    <value>سويت بانتس أطفال ولادي</value>
+  </data>
+  <data name="Baby Boy SweatShirts" xml:space="preserve">
+    <value>سويت بانتس أولادي حديثي الولادة</value>
+  </data>
+  <data name="Baby Girl Berets" xml:space="preserve">
+    <value>قبعات بناتي حديثي الولادة</value>
+  </data>
+  <data name="Baby Girl Cardigans" xml:space="preserve">
+    <value>سويت بانتس بناتي حديثي الولادة</value>
+  </data>
+  <data name="Baby Girl Newborn" xml:space="preserve">
+    <value>ملابس بناتي حديثي الولادة</value>
+  </data>
+  <data name="Baby Girl Overalls" xml:space="preserve">
+    <value>سالوبيتات أطفال بناتي</value>
+  </data>
+  <data name="Baby Girl SweatPants" xml:space="preserve">
+    <value>سويت بانتس أطفالي بناتي</value>
+  </data>
+  <data name="Boys Tank Tops" xml:space="preserve">
+    <value>كارديجان أطفال ولادي</value>
+  </data>
   <data name="POPULAR" xml:space="preserve">
     <value>الفئات الشعبية</value>
+  </data>
+  <data name="Ramadan Sale" xml:space="preserve">
+    <value>عروض رمضان</value>
   </data>
   <data name="THE_COUNTDOWN_TO_RAMADAN_HAS_BEGUN" xml:space="preserve">
     <value>The countdown to Ramadan has begun!</value>
   </data>
   <data name="THE_SEASONS_TOP_PICKS" xml:space="preserve">
     <value>The season's top picks!</value>
+  </data>
+  <data name="Where you looking for this?" xml:space="preserve">
+    <value>أين تبحث عن هذا؟</value>
   </data>
 </root>

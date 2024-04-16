@@ -48,10 +48,18 @@ namespace Application.Mapper
                 .ForMember(src => src.ImagesArr, obj => obj.MapFrom(dest => dest.images.Select(i=>i.imagepath).ToArray() )).ReverseMap();
 
 
+            CreateMap<Product, ProductDetailsDTO>()
+                .ForMember(src => src.ImagesArr, obj => obj.MapFrom(dest => dest.images.Select(i => i.imagepath).ToArray()))
+                 .ForMember(src => src.Category_ar_Name, obj => obj.MapFrom(dest => dest.category.ar_Name))
+                  .ForMember(src => src.productReviewLists, obj => obj.MapFrom(dest => dest.productReviews)).ReverseMap();
+
+
             CreateMap<Product, ProductForFitlter>()
                .ForMember(src => src.VendorId, obj => obj.MapFrom(dest => dest.VendorOrAdminID))
                .ForMember(src => src.VendorName, obj => obj.MapFrom(dest => dest.User.UserName))
                .ForMember(src => src.Image, obj => obj.MapFrom(dest => dest.images.FirstOrDefault().imagepath)).ReverseMap();
+
+
             CreateMap<GetAllUserDTO, AppUser>().ReverseMap();
             CreateMap<GetAllVendorsDTO, AppUser>().ReverseMap();
 

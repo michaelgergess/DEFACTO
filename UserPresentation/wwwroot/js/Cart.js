@@ -25,6 +25,29 @@
     }, 3000);
 }
 
+function addtoCartItems(event, productId) {
+    event.preventDefault();
+    let cartItems = localStorage.getItem('CartItems');
+    let oldData = cartItems ? JSON.parse(cartItems) : [];
+
+    let existingItemIndex = oldData.indexOf(productId);
+
+    if (existingItemIndex === -1) {
+        oldData.push(productId);
+        localStorage.setItem('CartItems', JSON.stringify(oldData));
+        document.getElementById('confirmation_text').innerText = 'PRODUCT ADDED TO CART';
+        updateCartQuantityDisplay();
+    } else {
+        document.getElementById('confirmation_text').innerText = 'Item already exists in the cart.';
+    }
+
+    document.getElementById('confirmationDialog').style.display = 'block';
+
+    setTimeout(function () {
+        document.getElementById('confirmationDialog').style.display = 'none';
+    }, 3000);
+
+}
 
 
 function calculateTotalQuantity() {

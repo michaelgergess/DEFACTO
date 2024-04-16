@@ -29,11 +29,13 @@ namespace Model
 
         public ICollection<Item>? items { get; set; }    
         public ICollection<Images>? images { get; set; }    
+        public ICollection<ProductReview>? productReviews { get; set; }    
 
         public Product()
         {
             items = new List<Item>();   
             images = new List<Images>();
+            productReviews = new List<ProductReview>();
         }
     }
 }

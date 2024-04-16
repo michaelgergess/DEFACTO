@@ -17,6 +17,7 @@ namespace DTOs.Item
         public decimal Price { get; set; }
         public int? SizeID { get; set; }
         public string SizeName { get; set; }
+        public string SizeCode { get; set; }
         public int ColorID { get; set; }
         public string ColorName { get; set; }
         public string? ColorHEX { get; set; }

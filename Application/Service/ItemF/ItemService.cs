@@ -144,7 +144,8 @@ namespace Application.Service.ItemF
                     ColorName = i.item.color.Name,
                     SizeName = i.item.size.Name,
                     Quantity = i.QuantityOfItem,
-                    Price = i.item.Price
+                    Price = i.item.Price,
+                    ProductName = i.item.product.Title
                 }).ToList();
 
             return new ResultDataList<itemForOrderDTO>

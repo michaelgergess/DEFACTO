@@ -290,7 +290,7 @@
 
 .SearchF {
     text-align: center;
-    padding: 26px 0 25px;
+    padding: 39px 0 17px;
 }
 
     .SearchF form {
@@ -3407,4 +3407,13 @@ form .invalid-feedback {
     height: 1px;
     background: #22242a;
     transition: width .3s;
+}
+.fa-heart::before {
+    content: "\f004";
+    padding-left: 3%;
+}
+
+.fa-user::before {
+    content: "\f007";
+    padding-left: 3%;
 }

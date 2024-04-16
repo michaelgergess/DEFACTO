@@ -72,14 +72,30 @@ namespace UserPresentation.Controllers
 
         public async Task<IActionResult> Details(int ProID)
         {
-            var model = await _productService.GetOne(ProID);
-
-            if (model == null)
+            ResultView<ProductDetailsDTO> productDetails ;
+            if (ProID <= 0)
+            {
+                var IdFromLocal = TempData["ProductID"];
+                if(IdFromLocal != null && (int)IdFromLocal > 0)
+                {
+                     productDetails = await _productService.GetProductDetails((int)IdFromLocal);
+                    if (productDetails.Entity == null)
+                    {
+                        return RedirectToAction("ProductsFilter");
+                    }
+                    return View(productDetails.Entity);
+                }
+                
+                return RedirectToAction("ProductsFilter");
+            }
+             productDetails = await _productService.GetProductDetails(ProID);
+            if(productDetails.Entity == null)
             {
                 return RedirectToAction("ProductsFilter");
             }
-            return View(model.Entity);
+            return View(productDetails.Entity);
         }
+        [HttpPost]
         public async Task<IActionResult> Favorite(string[] favorites)
         {
             List<ProductFavoriteDTO> model;
@@ -97,7 +113,7 @@ namespace UserPresentation.Controllers
             // Store favorites in session instead of TempData
             HttpContext.Session.SetString("Favorites", favoritesJson);
              model = favorite.Entities;
-            return View(model);
+            return View("Favorite", model);
         }
         public async Task<IActionResult> GetFavorites(string[] favorites)
         {
@@ -148,7 +164,12 @@ namespace UserPresentation.Controllers
         public async Task<JsonResult> GetSizes(int ProductId, string ColorName)
         {
             var sizes = await _productService.GetProductsSizesBy(ProductId, ColorName);
-            return Json(sizes); 
+            return Json(sizes);
+        }
+        public async Task<JsonResult> GetColors(int ProductId, string SizeName)
+        {
+            var colors = await _productService.GetProductsSizesBy(ProductId, SizeName);
+            return Json(colors);
         }
         public async Task<JsonResult> GetQuantityAndPrice(int ProductId, string ColorName,string? SizeName)
         {

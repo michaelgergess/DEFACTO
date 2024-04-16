@@ -1,12 +1,38 @@
 ﻿@using DTOs.Orders
 @using DTOs.Paginated
 @model PaginatedList<OrderDetailsDTO>
+@using Microsoft.AspNetCore.Mvc.Localization
+@using System.Globalization
+@inject IViewLocalizer Localizer
+@{
+    ViewData["Title"] = "Cart";
+    string url = Context.Request.Path;
+    if (url == "/")
+    {
+        url = "/home/index";
+    }
 
+    var lan = "en";
+    var direction = "ltr";
+    var arrowNext = "right";
+    var arrowPerv = "left";
+
+
+    if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
+    {
+        lan = "ar";
+        direction = "rtl";
+        arrowNext = "left";
+        arrowPerv = "right";
+
+    }
+
+}
 @{
     ViewData["Title"] = "OrderDetails";
     string[] productIds = ViewBag.ProductIds?.ToString()?
-        .Replace("[", "")  // Remove opening bracket
-        .Replace("]", "")  // Remove closing bracket
+        .Replace("[", "") 
+        .Replace("]", "")  
         .Split(new[] { ',', ' ' }, StringSplitOptions.RemoveEmptyEntries); 
 }
 @section Styles {
@@ -18,7 +44,7 @@
         <div class="col-md-10">
             <div class="card">
                 <div class="card-header">
-                    <h5 class="card-title">Order Details</h5>
+                    <h5 class="card-title">@Localizer["Order Details"]</h5>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -26,10 +52,10 @@
                             <thead class="thead-dark">
                                 <tr>
                                     <th scope="col">#</th>
-                                    <th scope="col">Status</th>
-                                    <th scope="col">Total Quantity</th>
-                                    <th scope="col">Total Price</th>
-                                    <th scope="col">Created</th>
+                                    <th scope="col">@Localizer["Status"]</th>
+                                    <th scope="col">@Localizer["Total Quantity"]</th>
+                                    <th scope="col">@Localizer["Total Price"]</th>
+                                    <th scope="col">@Localizer["Created"]</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -53,7 +79,7 @@
                                 <li class="page-item @((!Model.PreviousPage) ? "disabled" : "")">
                                     <a asp-action="OrderDetails" asp-route-PageNumber="@(Model.PageIndex - 1)" class="page-link @(Model.PreviousPage ? "" : "disabled")" aria-label="Previous">
                                         <span aria-hidden="true">&laquo;</span>
-                                        <span class="sr-only">Previous</span>
+                                        <span class="sr-only">@Localizer["Previous"]</span>
                                     </a>
                                 </li>
                                 @for (int i = 1; i <= Model.TotalPages; i++)
@@ -65,7 +91,7 @@
                                 <li class="page-item @((!Model.NextPage) ? "disabled" : "")">
                                     <a asp-action="OrderDetails"  asp-route-PageNumber="@(Model.PageIndex + 1)" class="page-link @(Model.NextPage ? "" : "disabled")" aria-label="Next">
                                         <span aria-hidden="true">&raquo;</span>
-                                        <span class="sr-only">Next</span>
+                                        <span class="sr-only">@Localizer["Next"]</span>
                                     </a>
                                 </li>
                             </ul>

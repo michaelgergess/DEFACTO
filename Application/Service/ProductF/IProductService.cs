@@ -36,5 +36,7 @@ namespace Application.Services
         Task<ResultDataList<GetCart>> ProductsInCart(List<string> ProductIds);
         Task<GetQuntityAndPrice> GetProductsQuantityBy(int ProductId, string ColorName, string SizeName);
         Task<List<string>> GetProductsSizesBy(int ProductId, string ColorName);
+        Task<List<string>> GetProductsColorsBy(int ProductId, string sizeName);
+        Task<ResultView<ProductDetailsDTO>> GetProductDetails(int productId);
     }
 }

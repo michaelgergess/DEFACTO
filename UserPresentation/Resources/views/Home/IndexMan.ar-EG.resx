@@ -117,10 +117,151 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="acc1" xml:space="preserve">
+    <value>/images/men/acc1-ar.webp</value>
+  </data>
+  <data name="acc2" xml:space="preserve">
+    <value>/images/men/acc2-ar.webp</value>
+  </data>
+  <data name="acc3" xml:space="preserve">
+    <value>/images/men/acc3-ar.webp</value>
+  </data>
+  <data name="acc4" xml:space="preserve">
+    <value>/images/men/acc4-ar.webp</value>
+  </data>
+  <data name="ACCESSORY &amp; FOOTWEAR" xml:space="preserve">
+    <value>اكسسوارات &amp; أحذية</value>
+  </data>
+  <data name="Berts" xml:space="preserve">
+    <value>بناطيل رجالية رياضية</value>
+  </data>
+  <data name="Favorite" xml:space="preserve">
+    <value>المفضلات</value>
+  </data>
+  <data name="Homewear" xml:space="preserve">
+    <value>ملابس منزلية رجالي</value>
+  </data>
+  <data name="img1" xml:space="preserve">
+    <value>/images/men/img1-ar.webp</value>
+  </data>
+  <data name="img10" xml:space="preserve">
+    <value>/images/men/imgslide3-ar.webp</value>
+  </data>
+  <data name="img11" xml:space="preserve">
+    <value>/images/men/imgslide4-ar.webp</value>
+  </data>
+  <data name="img12" xml:space="preserve">
+    <value>/images/men/12-ar.webp</value>
+  </data>
+  <data name="img13" xml:space="preserve">
+    <value>/images/men/13-ar.webp</value>
+  </data>
+  <data name="img14" xml:space="preserve">
+    <value>/images/men/14-ar.webp</value>
+  </data>
+  <data name="img15" xml:space="preserve">
+    <value>/images/men/15-ar.webp</value>
+  </data>
+  <data name="img16" xml:space="preserve">
+    <value>/images/men/slide2man1-ar.webp</value>
+  </data>
+  <data name="img17" xml:space="preserve">
+    <value>/images/men/slide2man2-ar.webp</value>
+  </data>
+  <data name="img18" xml:space="preserve">
+    <value>/images/men/18-ar.webp</value>
+  </data>
+  <data name="img19" xml:space="preserve">
+    <value>/images/men/19-ar.webp</value>
+  </data>
+  <data name="img2" xml:space="preserve">
+    <value>/images/men/img2-ar.webp</value>
+  </data>
+  <data name="img20" xml:space="preserve">
+    <value>/images/men/20-ar.webp</value>
+  </data>
+  <data name="img21" xml:space="preserve">
+    <value>/images/men/21-ar.webp</value>
+  </data>
+  <data name="img22" xml:space="preserve">
+    <value>/images/men/22-ar.webp</value>
+  </data>
+  <data name="img23" xml:space="preserve">
+    <value>/images/men/23-ar.webp</value>
+  </data>
+  <data name="img3" xml:space="preserve">
+    <value>/images/men/img3-ar.webp</value>
+  </data>
+  <data name="img4" xml:space="preserve">
+    <value>/images/men/img4-ar.webp</value>
+  </data>
+  <data name="img5" xml:space="preserve">
+    <value>/images/men/img5-ar.webp</value>
+  </data>
+  <data name="img6" xml:space="preserve">
+    <value>/images/men/men1-ar.webp</value>
+  </data>
+  <data name="img7" xml:space="preserve">
+    <value>/images/men/men2-ar.webp</value>
+  </data>
+  <data name="img8" xml:space="preserve">
+    <value>/images/men/imgslide1-ar.webp</value>
+  </data>
+  <data name="img9" xml:space="preserve">
+    <value>/images/men/imgslide2-ar.webp</value>
+  </data>
+  <data name="Jeans" xml:space="preserve">
+    <value>ملابس جينز رجالي</value>
+  </data>
+  <data name="Last Visited" xml:space="preserve">
+    <value>آخر منتجات شاهدتها</value>
+  </data>
+  <data name="Man Jackets" xml:space="preserve">
+    <value>جاكيت رجالي</value>
+  </data>
+  <data name="Man Shoes" xml:space="preserve">
+    <value>أحذية رجالي</value>
+  </data>
+  <data name="Man Studio" xml:space="preserve">
+    <value>مجموعة الاستوديو</value>
+  </data>
+  <data name="Outerwears" xml:space="preserve">
+    <value>ملابس خارجية</value>
+  </data>
+  <data name="POPULAR CATEGORIES" xml:space="preserve">
+    <value>الفئات الشعبية</value>
+  </data>
+  <data name="Ramdan Sale" xml:space="preserve">
+    <value>عروض رمضان </value>
+  </data>
+  <data name="Shirts" xml:space="preserve">
+    <value>قمصان رجالي</value>
+  </data>
+  <data name="slide3im1" xml:space="preserve">
+    <value>/images/men/slide3im1.gif</value>
+  </data>
+  <data name="slide3im2" xml:space="preserve">
+    <value>/images/men/slide3im2-ar.webp</value>
+  </data>
+  <data name="Special Products For You" xml:space="preserve">
+    <value>منتجات خاصة لك</value>
+  </data>
+  <data name="Sweatpants" xml:space="preserve">
+    <value>بناطيل رياضية رجالي</value>
+  </data>
+  <data name="SweatShirts" xml:space="preserve">
+    <value>بلوزرات رجالي</value>
+  </data>
   <data name="THE_COUNTDOWN_TO_RAMADAN_HAS_BEGUN" xml:space="preserve">
     <value>لقد بدأ العد التنازلي لرمضان!</value>
   </data>
   <data name="THE_SEASONS_TOP_PICKS" xml:space="preserve">
     <value>أفضل اختيارات الموسم!</value>
+  </data>
+  <data name="Trends" xml:space="preserve">
+    <value>التريندات</value>
+  </data>
+  <data name="Trousers" xml:space="preserve">
+    <value>بناطيل رجالي</value>
   </data>
 </root>

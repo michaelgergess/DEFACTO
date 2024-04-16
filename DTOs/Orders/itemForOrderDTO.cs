@@ -14,5 +14,7 @@ namespace Application.Service.Order
         public string SizeName { get; set; }
         public string ColorName { get; set; }
 
+        public string ProductName { get; set; }
+
     }
 }

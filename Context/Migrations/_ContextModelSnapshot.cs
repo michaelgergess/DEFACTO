@@ -497,7 +497,6 @@ namespace Context.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("ReviewMessage")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("ReviewRate")

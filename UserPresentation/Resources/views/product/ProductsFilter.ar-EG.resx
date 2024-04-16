@@ -156,6 +156,9 @@
   <data name="Gender" xml:space="preserve">
     <value>الجنس</value>
   </data>
+  <data name="Go To Cart" xml:space="preserve">
+    <value>اذهب اللي العربه </value>
+  </data>
   <data name="Gray" xml:space="preserve">
     <value>رمادي</value>
   </data>
@@ -169,7 +172,7 @@
     <value>أطفال</value>
   </data>
   <data name="Low_to_high" xml:space="preserve">
-    <value>من أسفل إلى أعلى</value>
+    <value>من الاقل الي الاكثر</value>
   </data>
   <data name="Male" xml:space="preserve">
     <value>ذكور</value>
@@ -188,6 +191,9 @@
   </data>
   <data name="Pink" xml:space="preserve">
     <value>القرنفل</value>
+  </data>
+  <data name="PRODUCT ADDED" xml:space="preserve">
+    <value>تم الاضافه ف العربه</value>
   </data>
   <data name="Red" xml:space="preserve">
     <value>أحمر</value>

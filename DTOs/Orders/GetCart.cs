@@ -14,7 +14,10 @@ namespace DTOs.Orders
     {
         public int Id { get; init; }
         public string Image { get; init; }
+
         public string Title { get; init; }
+        public string ar_Title { get; init; }
+
         public decimal price { get; init; }
         public ICollection<string> ColorsName { get; init; }
     }

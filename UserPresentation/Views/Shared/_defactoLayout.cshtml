@@ -18,7 +18,7 @@
         direction = "ltr";
     }
     string path = Context.Request.Path;
-
+    
     string ACVwomen = path.EndsWith("/IndexWoman") ? "active-de" : "";
     string ACVmen = path.EndsWith("/IndexMan") ? "active-de" : "";
     string ACVKids = path.EndsWith("/IndexKids") ? "active-de" : "";
@@ -40,7 +40,7 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/UserPresentation.styles.css" asp-append-version="true" />
-    <link href="~/css/cart.css" rel="stylesheet" />
+   
     @if (direction == "rtl")
     {
         <link href="~/css/filter_ar.css" rel="stylesheet" />
@@ -150,10 +150,15 @@
                                 </a>
                             </li>
                             <li class="nav-item" style="display:none" id="nav-login-for-mobile">
-
-                                <a onclick="gotofavoriet()" style="width:14vh" href="#">
+                                <form asp-action="Favorite" asp-controller="Product" id="fav-form-0">
+                                    <a href="#" id="button-formLink-0">
+                                        <input type="hidden" class="fav-in-sidbar" style="width:14vh" value="" name="favorites" />
+                                        <i style="display:contents;" class="fa-regular fa-heart m-1"></i>@Localizer["Favorite"]
+                                    </a>
+                                </form>
+                            @*     <a style="width:14vh" href="#" class="fav-in-sidbar">
                                     <i style="display:contents;" class="fa-regular fa-heart m-1"></i>@Localizer["Favorite"]
-                                </a>
+                                </a> *@
                             </li>
                             <li class="nav-item" style="display:none" id="nav-login-for-mobile">
 
@@ -200,11 +205,18 @@
                                 <i style="display:contents;" class="fa fa-sign-out" aria-hidden="true"></i>@Localizer["LogOut"]
                             </a>
                         }
-
-
-                        <a id ="fav-ids" style="width:14vh">
+                        
+                        <form asp-action="Favorite" asp-controller="Product" id="fav-form">
+                            <a href="#" id="button-formLink">
+                                <input type="hidden" id="fav-ids" style="width:14vh" value="" name="favorites" />
+                                <i style="display:contents;" class="fa-regular fa-heart m-1"></i>@Localizer["Favorite"]
+                            </a>
+                        </form>
+                        
+                      
+                       @*  <a id="fav-ids" style="width:14vh" href="#">
                             <i style="display:contents;" class="fa-regular fa-heart m-1"></i>@Localizer["Favorite"]
-                        </a>
+                        </a> *@
                         <a rel="nofollow" class="header__section--toggle" asp-action="Cart"  asp-controller="Product" style="width:24vh">
                             <i class="fa fa-shopping-bag m-2"></i>
                             <span class="mini-basket-count" id="cartQuantity">0</span>
@@ -237,7 +249,7 @@
                 <img src="@Url.Content("~/images/icon1.svg")" alt="" class="me-3 img-fluid">
                 <div class="mt-2">
                     <div class="footer-services__item--title">@Localizer["Click&amp;Collect From Store"]</div>
-                    <div class="footer-services__item--sub-title">Free Cargo</div>
+                    <div class="footer-services__item--sub-title">@Localizer["Free Cargo"]</div>
                 </div>
             </div>
 
@@ -245,54 +257,55 @@
                 <img src="@Url.Content("~/images/icon2.svg")" alt="" class="me-3 img-fluid">
 
                 <div class="mt-2">
-                    <div class="footer-services__item--title">Cash On Delivery</div>
-                    <div class="footer-services__item--sub-title"> Cash on delivery fee is 15 EGP</div>
+                    <div class="footer-services__item--title">@Localizer["Cash On Delivery"]</div>
+                    <div class="footer-services__item--sub-title"> @Localizer["Cash on delivery fee is 15 EGP"]</div>
                 </div>
             </div>
+
 
             <div class="icon-container mb-4">
                 <img src=" @Url.Content("~/images/icon3.svg")" alt="" class=" me-3 img-fluid">
                 <div class="mt-2">
-                    <div class="footer-services__item--title">Click&amp;Collect From Store</div>
-                    <div class="footer-services__item--sub-title">Free Cargo</div>
+                    <div class="footer-services__item--title">@Localizer["Click&amp;Collect From Store"]</div>
+                    <div class="footer-services__item--sub-title">@Localizer["Free Cargo"]</div>
                 </div>
             </div>
 
             <div class="icon-container  mb-4">
                 <img src="@Url.Content("~/images/icon4.svg")" alt="" class="me-3 img-fluid">
                 <div class="mt-2">
-                    <div class="footer-services__item--title">Click&amp;Collect From Store</div>
-                    <div class="footer-services__item--sub-title">Free Cargo</div>
+                    <div class="footer-services__item--title">@Localizer["Click&amp;Collect From Store"]</div>
+                    <div class="footer-services__item--sub-title">@Localizer["Free Cargo"]</div>
                 </div>
             </div>
+         
 
         </div>
         <div class="m-3 d-md-flex justify-content-md-between flex-wrap">
-
             <div class="headSecondFooter mt-5 ms-md-5 mb-md-0">
-                <h5>Corporate Information</h5>
-                <a href="#" class="d-block mb-3">Defacto</a>
-                <a href="#" class="d-block mb-3">About Us</a>
-                <a href="#" class="d-block mb-3">Human Resources</a>
+                <h5>@Localizer["Corporate Information"]</h5>
+                <a href="#" class="d-block mb-3">@Localizer["Defacto"]</a>
+                <a href="#" class="d-block mb-3">@Localizer["About Us"]</a>
+                <a href="#" class="d-block mb-3">@Localizer["Human Resources"]</a>
             </div>
             <div class="headSecondFooter mt-5 mb-md-0">
-                <h5>Help</h5>
-                <a href="#" class="d-block">Frequently Asked Questions</a>
-                <a href="#" class="d-block">Return And Changes</a>
-                <a href="#" class="d-block">Order Tracking</a>
-                <a href="#" class="d-block">How to shop on DeFacto?</a>
-                <a href="#" class="d-block">How to pay on DeFacto?</a>
-                <a href="#" class="d-block">Conditions of competition</a>
+                <h5>@Localizer["Help"]</h5>
+                <a href="#" class="d-block">@Localizer["Frequently Asked Questions"]</a>
+                <a href="#" class="d-block">@Localizer["Return And Changes"]</a>
+                <a href="#" class="d-block">@Localizer["Order Tracking"]</a>
+                <a href="#" class="d-block">@Localizer["How to shop on DeFacto?"]</a>
+                <a href="#" class="d-block">@Localizer["How to pay on DeFacto?"]</a>
+                <a href="#" class="d-block">@Localizer["Conditions of competition"]</a>
             </div>
             <div class="headSecondFooter mt-5 mb-md-0">
-                <h5>Contact Us</h5>
-                <a href="#" class="d-block mb-3">Contact Form</a>
-                <a href="#" class="d-block mb-3">Customer Services</a>
-                <a href="#" class="d-block mb-3">WhatsApp +20 150 171 8113</a>
-                <a href="#" class="d-block mb-3">Call Center 19782</a>
+                <h5>@Localizer["Contact Us"]</h5>
+                <a href="#" class="d-block mb-3">@Localizer["Contact Form"]</a>
+                <a href="#" class="d-block mb-3">@Localizer["Customer Services"]</a>
+                <a href="#" class="d-block mb-3">@Localizer["WhatsApp +20 150 171 8113"]</a>
+                <a href="#" class="d-block mb-3">@Localizer["Call Center 19782"]</a>
             </div>
             <div class="headSecondFooter mt-5 me-md-5 mb-md-0 d-flex flex-column ">
-                <h5>Social Media</h5>
+                <h5>@Localizer["Social Media"]</h5>
                 <div class="headSecondFooter mt-5 me-md-5 mb-md-0 d-flex flex-row align-items-md-end">
                     <a href="#"><i class="me-4 fab fa-instagram" style="font-size: 3rem;"></i></a>
                     <a href="#"><i class=" ms-4 fab fa-tiktok" style="font-size: 3rem;"></i></a>
@@ -302,27 +315,27 @@
         <hr class="mt-5 mb-5">
         <div class="container">
             <div class="newsletter">
-                <div class="newsletter__title">JOIN THE FUN!</div>
-                <div class="newsletter__subtitle">Subscribe to get the latest updates about our campaigns</div>
+                <div class="newsletter__title">@Localizer["JOIN THE FUN!"]</div>
+                <div class="newsletter__subtitle">@Localizer["Subscribe to get the latest updates about our campaigns"]</div>
                 <div class="newsletter__form">
                     <form id="newsletter-form" method="POST" class="form" novalidate="novalidate">
                         <div class="newsletter__radio-group">
-                            <div class="newsletter__radio-group--title">Who are you shopping for?</div>
+                            <div class="newsletter__radio-group--title">@Localizer["Who are you shopping for?"]</div>
                             <div class="newsletter__radio-group--buttons">
                                 <div class="newsletter-custom-radio" onclick="femalebtn()">
                                     <input type="radio"
                                            name="gender"
-                                           required-message="Please select gender." required="" checked=""> <label id="femaleButton" for="subscribeToNewsletterFemale">Female</label>
+                                           required-message="Please select gender." required="" checked=""> <label id="femaleButton" for="subscribeToNewsletterFemale">@Localizer["Female"]</label>
                                 </div>
                                 <div class="newsletter-custom-radio" onclick="malebtn()">
                                     <input type="radio"
                                            name="gender"
-                                           required-message="Please select gender." required=""> <label id="maleButton" for="subscribeToNewsletterMale">Male</label>
+                                           required-message="Please select gender." required=""> <label id="maleButton" for="subscribeToNewsletterMale">@Localizer["Male"]</label>
                                 </div>
                                 <div class="newsletter-custom-radio" onclick="kids()">
                                     <input type="radio"
                                            name="gender"
-                                           required-message="Please select gender." required=""> <label id="kidsButton" for="subscribeToNewsletterKid">Kids</label>
+                                           required-message="Please select gender." required=""> <label id="kidsButton" for="subscribeToNewsletterKid">@Localizer["Kids_"]</label>
                                 </div>
                             </div>
                         </div>
@@ -330,7 +343,7 @@
                             <div class="custom-input">
                                 <input id="NewsletterEmail" data-type="email" name="email"
                                        required-message="Please enter a valid email address."
-                                       validate-message="Please enter a valid email address." required=""> <label for="NewsletterEmail">E-mail Address</label>
+                                       validate-message="Please enter a valid email address." required=""> <label for="NewsletterEmail"> @Localizer["E-mail Address"]</label>
                             </div>
                             <div class="custom-checkbox">
                                 <input type="checkbox" data-type="checkbox" id="NewsletterContract"
@@ -338,15 +351,15 @@
                                     <a class="black-link"
                                        href="/en-eg/static/privacy-policy">
                                         <strong>
-                                            I accept the Confidenciality
-                                            Policy
+                                            @Localizer["I accept the Confidenciality Policy"]
+                                          
                                         </strong>
                                     </a>
                                 </label>
                             </div>
                             <div class="break-group"></div><button class="button button--small" id="NewsletterBtn">
-                                Subscribe
-                                Now!
+                                 @Localizer["Subscribe"]
+
                             </button>
                         </div>
                     </form>
@@ -354,69 +367,67 @@
             </div>
         </div>
 
-        <p class="m-4">TOP CATEGORIES</p>
-
+        <p class="m-4">@Localizer["TOP CATEGORIES"]</p>
         <div class="m-3 d-md-flex justify-content-md-between flex-wrap">
 
             <div class="headSecondFooter mt-5  mb-md-0">
-                <a href="#" class="d-block mb-3">Stores</a>
-                <a href="#" class="d-block mb-3">Brand Ambassador</a>
-                <a href="#" class="d-block mb-3">Women's Day Gifts</a>
-                <a href="#" class="d-block mb-3">Man Jeans</a>
-                <a href="#" class="d-block mb-3">Woman Perfume</a>
+                <a href="#" class="d-block mb-3">@Localizer["Stores"]</a>
+                <a href="#" class="d-block mb-3">@Localizer["Brand Ambassador"]</a>
+                <a href="#" class="d-block mb-3">@Localizer["Women's Day Gifts"]</a>
+                <a href="#" class="d-block mb-3">@Localizer["Man Jeans"]</a>
+                <a href="#" class="d-block mb-3">@Localizer["Woman Perfume"]</a>
             </div>
 
             <div class="headSecondFooter mt-5 mb-md-0">
-                <a href="#" class="d-block mb-3">Man Sweatshirts</a>
-                <a href="#" class="d-block mb-3">Woman Tunics</a>
-                <a href="#" class="d-block mb-3">Woman Trousers</a>
-                <a href="#" class="d-block mb-3">Woman Shirt</a>
-                <a href="#" class="d-block mb-3">Woman Dress</a>
+                <a href="#" class="d-block mb-3">@Localizer["Man Sweatshirts"]</a>
+                <a href="#" class="d-block mb-3">@Localizer["Woman Tunics"]</a>
+                <a href="#" class="d-block mb-3">@Localizer["Woman Trousers"]</a>
+                <a href="#" class="d-block mb-3">@Localizer["Woman Shirt"]</a>
+                <a href="#" class="d-block mb-3">@Localizer["Woman Dress"]</a>
 
             </div>
 
             <div class="headSecondFooter mt-5  mb-md-0">
-                <a href="#" class="d-block mb-3">Woman Skirt</a>
-                <a href="#" class="d-block mb-3">Man Shirt</a>
-                <a href="#" class="d-block mb-3">Man Trousers</a>
-                <a href="#" class="d-block mb-3">Man Jeans</a>
-                <a href="#" class="d-block mb-3">Man Blazer Jacket</a>
+                <a href="#" class="d-block mb-3">@Localizer["Woman Skirt"]</a>
+                <a href="#" class="d-block mb-3">@Localizer["Man Shirt"]</a>
+                <a href="#" class="d-block mb-3">@Localizer["Man Trousers"]</a>
+                <a href="#" class="d-block mb-3">@Localizer["Man Jeans"]</a>
+                <a href="#" class="d-block mb-3">@Localizer["Man Blazer Jacket"]</a>
             </div>
 
             <div class="headSecondFooter mt-5  mb-md-0">
-                <a href="#" class="d-block mb-3">Man Outwear</a>
-                <a href="#" class="d-block mb-3">Girl Trousers</a>
-                <a href="#" class="d-block mb-3">Girl Blouse</a>
-                <a href="#" class="d-block mb-3">Woman Outwear</a>
-                <a href="#" class="d-block mb-3">Baby Girl Newborn</a>
-            </div>
-
-
-            <div class="headSecondFooter mt-5  mb-md-0">
-                <a href="#" class="d-block mb-3">Baby Boy Newborn</a>
-                <a href="#" class="d-block mb-3">Boy T-shirt</a>
-                <a href="#" class="d-block mb-3">Woman Blazer Jacket</a>
-                <a href="#" class="d-block mb-3">Woman Accessories</a>
-                <a href="#" class="d-block mb-3">Modest Dress</a>
+                <a href="#" class="d-block mb-3">@Localizer["Man Outwear"]</a>
+                <a href="#" class="d-block mb-3">@Localizer["Girl Trousers"]</a>
+                <a href="#" class="d-block mb-3">@Localizer["Girl Blouse"]</a>
+                <a href="#" class="d-block mb-3">@Localizer["Woman Outwear"]</a>
+                <a href="#" class="d-block mb-3">@Localizer["Baby Girl Newborn"]</a>
             </div>
 
 
             <div class="headSecondFooter mt-5  mb-md-0">
-                <a href="#" class="d-block mb-3">Man Perfume</a>
-                <a href="#" class="d-block mb-3">Woman Sweatshirt</a>
-                <a href="#" class="d-block mb-3">Ramadan Offers</a>
-                <a href="#" class="d-block mb-3">Baby Colourful Style</a>
-                <a href="#" class="d-block mb-3">Kids Colourful Style</a>
+                <a href="#" class="d-block mb-3">@Localizer["Baby Boy Newborn"]</a>
+                <a href="#" class="d-block mb-3">@Localizer["Boy T-shirt"]</a>
+                <a href="#" class="d-block mb-3">@Localizer["Woman Blazer Jacket"]</a>
+                <a href="#" class="d-block mb-3">@Localizer["Woman Accessories"]</a>
+                <a href="#" class="d-block mb-3">@Localizer["Modest Dress"]</a>
+            </div>
+
+
+            <div class="headSecondFooter mt-5  mb-md-0">
+                <a href="#" class="d-block mb-3">@Localizer["Man Perfume"]</a>
+                <a href="#" class="d-block mb-3">@Localizer["Woman Sweatshirt"]</a>
+                <a href="#" class="d-block mb-3">@Localizer["Ramadan Offers"]</a>
+                <a href="#" class="d-block mb-3">@Localizer["Baby Colourful Style"]</a>
+                <a href="#" class="d-block mb-3">@Localizer["Kids Colourful Style"]</a>
             </div>
         </div>
-        <div class="mt-4">
-            <img style="width: 80px;" src="@Url.Content("~/images/money11.webp")" alt="">
-            @* <img style="width: 80px;" src="@Url.Content("~/images/money1.webp")" alt=""> *@
-            <img style="width: 80px;" src="@Url.Content("~/images/money2.webp")" alt="">
-            <img style="width: 80px;" src="@Url.Content("~/images/money3.webp")" alt="">
-            <img style="width: 80px;" src="@Url.Content("~/images/money4.webp")" alt="">
-            <img style="width: 80px;" src="@Url.Content("~/images/money5.webp")" alt="">
-            <img style="width: 80px;" src="@Url.Content("~/images/money6.webp")" alt="">
+        <div class="mt-4 payment-icon">
+            <img style="width: 80px;" src="~/images/money11.webp"  alt="">
+            <img style="width: 80px;" src="~/images/money2.webp"   alt="">
+            <img style="width: 80px;" src="~/images/money3.webp"   alt="">
+            <img style="width: 80px;" src="~/images/money4.webp"   alt="">
+            <img style="width: 80px;" src="~/images/money5.webp"   alt="">
+            <img style="width: 80px;" src="~/images/money6.webp"   alt="">
         </div>
     </footer>
     <script src="~/js/Navbar.js"></script>
@@ -432,15 +443,8 @@
         $(document).ready(function () {
             updateCartQuantityDisplay();
         });
-        var favoritesIdlist = localStorage.getItem("favorites");
-        var myAnchor = document.getElementById("fav-ids");  
-       
-        myAnchor.href = `/Product/Favorite?favorites=${favoritesIdlist}`;
-        function gotofavoriet(){
-            window.open(`/Product/Favorite?favorites=${favoritesIdlist}`);
 
-        }
-     
+       
     </script>
     @await RenderSectionAsync("Scripts", required: false)
 

@@ -20,7 +20,7 @@
 
     <form id="selectLanguage" method="post" asp-controller="Home" asp-action="SetLanguage"
           asp-route-returnUrl="@returnUrl">
-
+          <input type="hidden" value="" name="ID" id="hiddenInputID"/>
         <select class="selectLanguage-div" id="selectLang" name="culture" asp-for="@requestCulture.Name" asp-items="CultureItems" onchange="this.form.submit();">
        
         </select>

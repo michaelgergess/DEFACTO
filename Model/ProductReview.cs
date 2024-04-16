@@ -13,8 +13,8 @@ namespace Model
         [ForeignKey("User")]
         public string CustomerID { get; set; }
         public AppUser User { get; set; }
-        [Required]
-        public string ReviewMessage { get; set; }
+      /*  [Required]*/
+        public string? ReviewMessage { get; set; }
         [Range(1, 5, ErrorMessage = "Review Rate Must be between 1 to 5")]
         public int? ReviewRate { get; set; }
         [ForeignKey("Product")]

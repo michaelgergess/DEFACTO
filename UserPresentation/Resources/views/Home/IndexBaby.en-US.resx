@@ -117,13 +117,52 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Baby Boy Berets" xml:space="preserve">
+    <value>Baby Boy Berets</value>
+  </data>
+  <data name="Baby Boy Newborn" xml:space="preserve">
+    <value>Baby Boy Newborn</value>
+  </data>
+  <data name="Baby Boy Set" xml:space="preserve">
+    <value>Baby Boy Set</value>
+  </data>
+  <data name="Baby Boy SweatPants" xml:space="preserve">
+    <value>Baby Boy SweatPants</value>
+  </data>
+  <data name="Baby Boy SweatShirts" xml:space="preserve">
+    <value>Baby Boy SweatShirts</value>
+  </data>
+  <data name="Baby Girl Berets" xml:space="preserve">
+    <value>Baby Girl Berets</value>
+  </data>
+  <data name="Baby Girl Cardigans" xml:space="preserve">
+    <value>Baby Girl Cardigans</value>
+  </data>
+  <data name="Baby Girl Newborn" xml:space="preserve">
+    <value>Baby Girl Newborn</value>
+  </data>
+  <data name="Baby Girl Overalls" xml:space="preserve">
+    <value>Baby Girl Overalls</value>
+  </data>
+  <data name="Baby Girl SweatPants" xml:space="preserve">
+    <value>Baby Girl SweatPants</value>
+  </data>
+  <data name="Boys Tank Tops" xml:space="preserve">
+    <value>Boys Tank Tops</value>
+  </data>
   <data name="POPULAR" xml:space="preserve">
     <value>POPULAR CATEGORIES</value>
+  </data>
+  <data name="Ramadan Sale" xml:space="preserve">
+    <value>Ramadan Sale</value>
   </data>
   <data name="THE_COUNTDOWN_TO_RAMADAN_HAS_BEGUN" xml:space="preserve">
     <value>The countdown to Ramadan has begun!</value>
   </data>
   <data name="THE_SEASONS_TOP_PICKS" xml:space="preserve">
     <value>The season's top picks!</value>
+  </data>
+  <data name="Where you looking for this?" xml:space="preserve">
+    <value>Where you looking for this?</value>
   </data>
 </root>

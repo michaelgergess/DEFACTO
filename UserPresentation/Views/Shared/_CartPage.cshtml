@@ -1,4 +1,31 @@
 ﻿@using DTOs.Orders
+@using Microsoft.AspNetCore.Mvc.Localization
+@using System.Globalization
+@inject IViewLocalizer Localizer
+@{
+
+    string url = Context.Request.Path;
+    if (url == "/")
+    {
+        url = "/home/index";
+    }
+
+    var lan = "en";
+    var direction = "ltr";
+    var arrowNext = "right";
+    var arrowPerv = "left";
+
+
+    if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
+    {
+        lan = "ar";
+        direction = "rtl";
+        arrowNext = "left";
+        arrowPerv = "right";
+
+    }
+
+}
 @{
     var i = 0; 
 }
@@ -17,7 +44,7 @@
                         <input type="hidden" id="quantity-@pro.Id" value="0"> <!-- Unique id for each input -->
                         <input type="hidden" id="price-@pro.Id" value="0"> <!-- Unique id for each input -->
                         <div class="product-card">
-                            <div class="row align-items-center">
+                            <div class="row align-items-center p-2">
                                 <div class="col-md-1">
                                     <input class="form-check-input" type="hidden" name="selectedItems[@i].itemID" value="@pro.Id" id="check-@pro.Id" style="right:10px">
                                     <input class="form-check-input" type="checkbox" name="selectedItems[@i].IsSelected" onclick="updateIsSelected(this, @i,@pro.Id)" value="@pro.Id" id="check2-@pro.Id" style="right:10px"   >
@@ -28,25 +55,33 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="product-info">
-                                        <h5>@pro.Title</h5>
+
+                                        @if (lan == "ar")
+                                        {
+                                            <h5> @pro.ar_Title</h5>
+                                        }
+                                        else
+                                        {
+                                            <h5> @pro.Title</h5>
+                                        }      
                                         <div class="mb-2">
-                                            <label for="color-@pro.Id">Color:</label>
+                                            <label for="color-@pro.Id">@Localizer["Color"]</label>
                                             <select id="color-@pro.Id" name="color" class="form-select form-select-sm">
                                                 @foreach (var color in pro.ColorsName)
                                                 {
-                                                    <option value="@color">@color</option>
+                                                    <option value="@color"> @color</option>
                                                 }
                                             </select>
                                         </div>
                                         <div class="mb-2">
-                                            <label for="size-@pro.Id">Size:</label>
+                                            <label for="size-@pro.Id">@Localizer["Size"]</label>
                                             <select id="size-@pro.Id" name="size" class="form-select form-select-sm">
                                             </select>
                                         </div>
                                         <div class="quantity-controls mb-2">
                                         <button class="btn btn-outline-secondary" type="button" onclick="decrementQuantity(this, @pro.Id);">-</button>
                                         <div style="padding: 7%" >
-                                                Quantity <input type="text" style="border:0;width:25px" readonly id="OrderQuantity-@pro.Id" name="selectedItems[@i].QuantityOfItem" value="1">
+                                                @Localizer["Quantity"] <input type="text" style="border:0;width:25px" readonly id="OrderQuantity-@pro.Id" name="selectedItems[@i].QuantityOfItem" value="1">
                                             </div>
                                              <span class="quantity-text" id="quantity-text-@pro.Id" hidden>Quantity 1</span> 
                                             <button class="btn btn-outline-secondary"  type="button" onclick="incrementQuantity(this, @pro.Id); ">+</button>
@@ -57,7 +92,7 @@
                                     <h5 class="mb-0" id="total-price-@pro.Id">0</h5>
                                 </div>
                                 <div class="col-md-2">
-                                    <button class="remove-button" onclick="removeItem(@pro.Id);event.stopPropagation(); return false;">Remove</button>
+                                    <button class="remove-button" onclick="removeItem(@pro.Id);event.stopPropagation(); return false;">  @Localizer["Remove"]</button>
                                 </div>
                             </div>
                         </div>
@@ -66,8 +101,8 @@
 
                     }
                     <div class="text-center mt-3">
-                   
-                        <button type="submit" class="btn btn-dark">Order Now</button>
+
+                        <button type="submit" class="btn btn-dark">@Localizer["Order Now"]</button>
                     </div>
                 </form>
 
@@ -76,7 +111,7 @@
             {
                 <div class="text-center mt-5">
                     <h3>Your shopping cart is empty.</h3>
-                    <button type="button" class="btn btn-dark" >Start shopping</button>
+                    <button type="button" class="btn btn-dark">@Localizer["Start shopping"]</button>
                 </div>
             }
             <div id="temporaryAlert" class="alert-temporary">
@@ -140,7 +175,7 @@
             }
         });
         if (!checked) {
-            showTemporaryAlert('Please select at least one item');
+            showTemporaryAlert('@Localizer["Please select at least one item"]');
             return false;
         }
         return true;

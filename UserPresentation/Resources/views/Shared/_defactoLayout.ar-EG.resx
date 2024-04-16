@@ -117,15 +117,61 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="About" xml:space="preserve">
+    <value>تعرف علينا</value>
+  </data>
+  <data name="About Us" xml:space="preserve">
+    <value>معلومات عنا</value>
+  </data>
   <data name="ARE YOU ALREADY A MEMBER? LOG IN NOW" xml:space="preserve">
+    <value>هل أنت عضو بالفعل؟ تسجيل الدخول
+الآن</value>
+  </data>
+  <data name="ARE YOU ALREADY A MEMBER? LOG IN NOW1" xml:space="preserve">
     <value>هل أنت عضو بالفعل؟ تسجيل الدخول
 الآن</value>
   </data>
   <data name="BABY" xml:space="preserve">
     <value>حديثي الولادة</value>
   </data>
+  <data name="Baby Boy Newborn" xml:space="preserve">
+    <value>أولادي حديث ولادة</value>
+  </data>
+  <data name="Baby Colourful Style" xml:space="preserve">
+    <value>أسلوب ملون للرضع</value>
+  </data>
+  <data name="Baby Girl Newborn" xml:space="preserve">
+    <value>طفلة حديث الولادة</value>
+  </data>
+  <data name="BABY1" xml:space="preserve">
+    <value>حديثي الولادة</value>
+  </data>
+  <data name="Boy T-shirt" xml:space="preserve">
+    <value>تي شيرت اولادي</value>
+  </data>
+  <data name="Brand Ambassador" xml:space="preserve">
+    <value>سفير العلامة التجارية</value>
+  </data>
+  <data name="Cash On Delivery" xml:space="preserve">
+    <value>الدفع عند الاستلام</value>
+  </data>
+  <data name="Cash on delivery fee is 15 EGP" xml:space="preserve">
+    <value>رسوم الدفع عند الاستلام 15 جنيه</value>
+  </data>
   <data name="Click&amp;amp;Collect From Store" xml:space="preserve">
     <value>انقر و استلم من الفرع</value>
+  </data>
+  <data name="Click&amp;amp;Collect From Store1" xml:space="preserve">
+    <value>انقر و استلم من الفرع</value>
+  </data>
+  <data name="Conditions of competition" xml:space="preserve">
+    <value>شروط المنافسة </value>
+  </data>
+  <data name="Contact Form" xml:space="preserve">
+    <value>تواصل معنا</value>
+  </data>
+  <data name="Contact Us" xml:space="preserve">
+    <value>تواصل معنا</value>
   </data>
   <data name="Continue as guest" xml:space="preserve">
     <value> متابعة كزائر</value>
@@ -133,59 +179,170 @@
   <data name="Continue as guest-" xml:space="preserve">
     <value>متابعة كزائر</value>
   </data>
+  <data name="Continue as guest-1" xml:space="preserve">
+    <value>متابعة كزائر</value>
+  </data>
+  <data name="Continue as guest1" xml:space="preserve">
+    <value> متابعة كزائر</value>
+  </data>
+  <data name="Corporate Information" xml:space="preserve">
+    <value>معلومات الشركات</value>
+  </data>
+  <data name="Customer Services" xml:space="preserve">
+    <value>خدمة العملاء</value>
+  </data>
   <data name="Date of Birth" xml:space="preserve">
     <value>تاريخ الولادة</value>
   </data>
+  <data name="Date of Birth1" xml:space="preserve">
+    <value>تاريخ الولادة</value>
+  </data>
+  <data name="Defacto" xml:space="preserve">
+    <value>ديفاكتو</value>
+  </data>
   <data name="DEFIT" xml:space="preserve">
+    <value>رياضي</value>
+  </data>
+  <data name="DEFIT1" xml:space="preserve">
     <value>رياضي</value>
   </data>
   <data name="E-mail Address" xml:space="preserve">
     <value> عنوان البريد الالكتروني</value>
   </data>
+  <data name="E-mail Address1" xml:space="preserve">
+    <value> عنوان البريد الالكتروني</value>
+  </data>
   <data name="E-mail_Address" xml:space="preserve">
+    <value>عنوان البريد الالكتروني</value>
+  </data>
+  <data name="E-mail_Address1" xml:space="preserve">
     <value>عنوان البريد الالكتروني</value>
   </data>
   <data name="Email" xml:space="preserve">
     <value>البريد الالكتروني</value>
   </data>
+  <data name="Email1" xml:space="preserve">
+    <value>البريد الالكتروني</value>
+  </data>
   <data name="Favorite" xml:space="preserve">
+    <value>المفضلة</value>
+  </data>
+  <data name="Favorite1" xml:space="preserve">
     <value>المفضلة</value>
   </data>
   <data name="Female" xml:space="preserve">
     <value>انثي</value>
   </data>
+  <data name="Female1" xml:space="preserve">
+    <value>انثي</value>
+  </data>
   <data name="First Name" xml:space="preserve">
+    <value>الاسم الأول</value>
+  </data>
+  <data name="First Name1" xml:space="preserve">
     <value>الاسم الأول</value>
   </data>
   <data name="Forgot Password" xml:space="preserve">
     <value>هل نسيت كلمة المرور</value>
   </data>
+  <data name="Forgot Password1" xml:space="preserve">
+    <value>هل نسيت كلمة المرور</value>
+  </data>
+  <data name="Free Cargo" xml:space="preserve">
+    <value>شحن مجاني</value>
+  </data>
   <data name="FreeShipping" xml:space="preserve">
     <value>شحن مجاني، ضمان إرجاع أو استرداد الأموال خلال 30 يومًا.</value>
+  </data>
+  <data name="Frequently Asked Questions" xml:space="preserve">
+    <value>أسئلة تم تكرارها مؤخراً</value>
   </data>
   <data name="Gender" xml:space="preserve">
     <value>جنسك</value>
   </data>
+  <data name="Gender1" xml:space="preserve">
+    <value>جنسك</value>
+  </data>
+  <data name="Girl Blouse" xml:space="preserve">
+    <value>بلوزه بناتي</value>
+  </data>
+  <data name="Girl Trousers" xml:space="preserve">
+    <value>بنطلون بناتي</value>
+  </data>
+  <data name="Help" xml:space="preserve">
+    <value>المساعده</value>
+  </data>
+  <data name="How to pay on DeFacto?" xml:space="preserve">
+    <value>كيف تدفع في ديفاكتو</value>
+  </data>
+  <data name="How to shop on DeFacto?" xml:space="preserve">
+    <value>كيف يمكنك التسوق من ديفاكتو</value>
+  </data>
+  <data name="Human Resources" xml:space="preserve">
+    <value>الموارد البشرية</value>
+  </data>
+  <data name="I accept the Confidenciality Policy" xml:space="preserve">
+    <value>أوافق على سياسة السرية</value>
+  </data>
+  <data name="I accept the Confidentiality Policy" xml:space="preserve">
+    <value>أوافق على سياسة السرية</value>
+  </data>
   <data name="I do not want to specify" xml:space="preserve">
+    <value>لا اريد التحديد</value>
+  </data>
+  <data name="I do not want to specify1" xml:space="preserve">
     <value>لا اريد التحديد</value>
   </data>
   <data name="I have read and understand the Website Terms Use and the Privacy Policy by clicking of the 'Register' button." xml:space="preserve">
     <value>لقد قمت بقراءة وفهم شروط وقواعد استخدام الموقع الإلكترونى وفقا سياسة الخصوصية</value>
   </data>
+  <data name="I have read and understand the Website Terms Use and the Privacy Policy by clicking of the 'Register' button.1" xml:space="preserve">
+    <value>لقد قمت بقراءة وفهم شروط وقواعد استخدام الموقع الإلكترونى وفقا سياسة الخصوصية</value>
+  </data>
   <data name="I would like to sign up for the Defacto newsletter, receive Defacto survey inquiries and accept to receive E-Mails /SMS /calls for marketing purposes. I can unsubscribe from the newsletter and survey inquiries at any time for the future, e.g. by clicking on the unsubscribe link or sending an e-mail to dataprotection@defacto.com." xml:space="preserve">
     <value>أرغب فى الإشتراك فى الخدمة الإخبارية لديفاكتو وتلقى الإستفسارات حول إستطلاع ديفاكتو ، و قبول إستلام رسائل البريد الإلكترونى ، الرسائل النصية القصيرة \ المكالمات لأغراض التسويق . يمكننى إلغاء الإشتراك فى الخدمة الإخبارية وإستفسارات الإستبيان فى أى وقت فى المستقبل ، عن طريق النقر على رابط إلغاء الإشتراك أو إرسال بريد إلكترونى إلى ( dataprotection@defacto.com ) ستتم معالجة بياناتى وفقا لقانون حماية البيانات الشخصية . جميع البيانات الشخصية محمية وفقا للقانون رقم ١٥١ لسنة ٢٠٢٠ ( قانون حماية البيانات الشخصية)</value>
+  </data>
+  <data name="I would like to sign up for the Defacto newsletter, receive Defacto survey inquiries and accept to receive E-Mails /SMS /calls for marketing purposes. I can unsubscribe from the newsletter and survey inquiries at any time for the future, e.g. by clicking on the unsubscribe link or sending an e-mail to dataprotection@defacto.com.1" xml:space="preserve">
+    <value>أرغب فى الإشتراك فى الخدمة الإخبارية لديفاكتو وتلقى الإستفسارات حول إستطلاع ديفاكتو ، و قبول إستلام رسائل البريد الإلكترونى ، الرسائل النصية القصيرة \ المكالمات لأغراض التسويق . يمكننى إلغاء الإشتراك فى الخدمة الإخبارية وإستفسارات الإستبيان فى أى وقت فى المستقبل ، عن طريق النقر على رابط إلغاء الإشتراك أو إرسال بريد إلكترونى إلى ( dataprotection@defacto.com ) ستتم معالجة بياناتى وفقا لقانون حماية البيانات الشخصية . جميع البيانات الشخصية محمية وفقا للقانون رقم ١٥١ لسنة ٢٠٢٠ ( قانون حماية البيانات الشخصية)</value>
+  </data>
+  <data name="JOIN THE FUN!" xml:space="preserve">
+    <value>انضم للمتعة!</value>
   </data>
   <data name="KIDS" xml:space="preserve">
     <value>أطفال</value>
   </data>
+  <data name="Kids Colourful Style" xml:space="preserve">
+    <value>ستايل ملون للأطفال</value>
+  </data>
+  <data name="KIDS1" xml:space="preserve">
+    <value>أطفال</value>
+  </data>
+  <data name="Kids_" xml:space="preserve">
+    <value>طفل</value>
+  </data>
   <data name="Last Name" xml:space="preserve">
+    <value>اسم العائلة</value>
+  </data>
+  <data name="Last Name1" xml:space="preserve">
     <value>اسم العائلة</value>
   </data>
   <data name="LOG IN WITH SOCIAL ACCOUNT" xml:space="preserve">
     <value>تسجيل الدخول باستخدام حساب التواصل الاجتماعي</value>
   </data>
+  <data name="LOG IN WITH SOCIAL ACCOUNT1" xml:space="preserve">
+    <value>تسجيل الدخول باستخدام حساب التواصل الاجتماعي</value>
+  </data>
   <data name="LOG IN WITH SOCIAL_ACCOUNT" xml:space="preserve">
     <value>تسجيل الدخول باستخدام حساب التواصل الاجتماعي</value>
+  </data>
+  <data name="LOG IN WITH SOCIAL_ACCOUNT1" xml:space="preserve">
+    <value>تسجيل الدخول باستخدام حساب التواصل الاجتماعي</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>تسجيل الدخول</value>
+  </data>
+  <data name="LOGIN!" xml:space="preserve">
+    <value>تسجيل الدخول</value>
   </data>
   <data name="LoginDe" xml:space="preserve">
     <value>تسجيل دخول</value>
@@ -193,23 +350,74 @@
   <data name="LogOut" xml:space="preserve">
     <value>تسجيل خروج</value>
   </data>
+  <data name="LogOut1" xml:space="preserve">
+    <value>تسجيل خروج</value>
+  </data>
   <data name="Male" xml:space="preserve">
+    <value>ذكر</value>
+  </data>
+  <data name="Male1" xml:space="preserve">
     <value>ذكر</value>
   </data>
   <data name="MAN" xml:space="preserve">
     <value>رجالي</value>
   </data>
+  <data name="Man Blazer Jacket" xml:space="preserve">
+    <value>جاكيتات بليزر رجالي</value>
+  </data>
+  <data name="Man Jeans" xml:space="preserve">
+    <value>ملابس رجالي</value>
+  </data>
+  <data name="Man Outwear" xml:space="preserve">
+    <value>أطقم أولادي</value>
+  </data>
+  <data name="Man Perfume" xml:space="preserve">
+    <value>عطر الرجل</value>
+  </data>
+  <data name="Man Shirt" xml:space="preserve">
+    <value>تي شيرتات رجالي</value>
+  </data>
+  <data name="Man Sweatshirts" xml:space="preserve">
+    <value>بلوزات الرجلي</value>
+  </data>
+  <data name="Man Trousers" xml:space="preserve">
+    <value>بنطلونات رجالي </value>
+  </data>
+  <data name="MAN1" xml:space="preserve">
+    <value>رجالي</value>
+  </data>
+  <data name="Modest Dress" xml:space="preserve">
+    <value>فساتين محجبات</value>
+  </data>
   <data name="NOT A MEMBER? JOIN NOW" xml:space="preserve">
     <value>لست عضو ؟ سجل الآن</value>
   </data>
+  <data name="NOT A MEMBER? JOIN NOW1" xml:space="preserve">
+    <value>لست عضو ؟ سجل الآن</value>
+  </data>
+  <data name="Order Tracking" xml:space="preserve">
+    <value>تتبع الطلب</value>
+  </data>
   <data name="Password" xml:space="preserve">
+    <value>كلمة المرور</value>
+  </data>
+  <data name="Password1" xml:space="preserve">
     <value>كلمة المرور</value>
   </data>
   <data name="Password_" xml:space="preserve">
     <value>كلمة المرور</value>
   </data>
+  <data name="Password_1" xml:space="preserve">
+    <value>كلمة المرور</value>
+  </data>
   <data name="Phone Number" xml:space="preserve">
     <value>هاتف محمول</value>
+  </data>
+  <data name="Phone Number1" xml:space="preserve">
+    <value>هاتف محمول</value>
+  </data>
+  <data name="Ramadan Offers" xml:space="preserve">
+    <value>عروض رمضان</value>
   </data>
   <data name="Register" xml:space="preserve">
     <value>حساب جديد</value>
@@ -217,16 +425,34 @@
   <data name="Register#" xml:space="preserve">
     <value>التسجيل</value>
   </data>
+  <data name="Register#1" xml:space="preserve">
+    <value>التسجيل</value>
+  </data>
+  <data name="Register1" xml:space="preserve">
+    <value>حساب جديد</value>
+  </data>
   <data name="Remember Me" xml:space="preserve">
     <value>تذكرني</value>
   </data>
+  <data name="Remember Me1" xml:space="preserve">
+    <value>تذكرني</value>
+  </data>
+  <data name="Return And Changes" xml:space="preserve">
+    <value>عمليات الارجاع و الاستبدال السهلة</value>
+  </data>
   <data name="Search: Jean Pants, Basic Body, Modern Fit Shirt, Track Suit" xml:space="preserve">
     <value>البحث بنطلون جينز، بيزك بدي، شيميز مودرن، بدلة رياضية</value>
+  </data>
+  <data name="Search: Jean Pants, Basic Body, Modern Fit Shirt, Track Suit1" xml:space="preserve">
+    <value>البحث: بنطلون جينز، بيزك بدي، شيميز مودرن، بدلة رياضية</value>
   </data>
   <data name="SearchtxtNav" xml:space="preserve">
     <value>البحث بنطلون جينز، بيزك بدي، شيميز مودرن، بدلة رياضية</value>
   </data>
   <data name="ShoppingCart" xml:space="preserve">
+    <value>عربة التسويق</value>
+  </data>
+  <data name="ShoppingCart1" xml:space="preserve">
     <value>عربة التسويق</value>
   </data>
   <data name="SIGN IN" xml:space="preserve">
@@ -235,13 +461,79 @@
   <data name="Sign In!!" xml:space="preserve">
     <value>تسجيل الدخول</value>
   </data>
+  <data name="Sign In!!1" xml:space="preserve">
+    <value>تسجيل الدخول</value>
+  </data>
+  <data name="SIGN IN1" xml:space="preserve">
+    <value>تسجيل الدخول</value>
+  </data>
+  <data name="Social Media" xml:space="preserve">
+    <value>وسائل التواصل الاجتماعي</value>
+  </data>
+  <data name="Stores" xml:space="preserve">
+    <value>متاجر</value>
+  </data>
+  <data name="Subscribe" xml:space="preserve">
+    <value>تابع </value>
+  </data>
+  <data name="Subscribe to get the latest updates about our campaigns" xml:space="preserve">
+    <value>اشترك الآن وكن أول من يعلم بأحدث حملاتنا وعروضنا</value>
+  </data>
   <data name="SUBSCRIBE WITH YOUR EMAIL ADDRESS" xml:space="preserve">
     <value>إنشاء حساب جديد باستخدام عنوان البريد الإلكتروني</value>
+  </data>
+  <data name="SUBSCRIBE WITH YOUR EMAIL ADDRESS1" xml:space="preserve">
+    <value>إنشاء حساب جديد باستخدام عنوان البريد الإلكتروني</value>
+  </data>
+  <data name="TOP CATEGORIES" xml:space="preserve">
+    <value>أفضل الفئات</value>
+  </data>
+  <data name="Who are you shopping for?" xml:space="preserve">
+    <value>لمن تتسوق ؟</value>
   </data>
   <data name="WOMAN" xml:space="preserve">
     <value>حريمي</value>
   </data>
+  <data name="Woman Accessories" xml:space="preserve">
+    <value>اكسسورات حريمي </value>
+  </data>
+  <data name="Woman Blazer Jacket" xml:space="preserve">
+    <value>جاكيتات بليزر حريمي</value>
+  </data>
+  <data name="Woman Dress" xml:space="preserve">
+    <value>فساتين حريمي </value>
+  </data>
+  <data name="Woman Outwear" xml:space="preserve">
+    <value>نساء ملابس محجبات</value>
+  </data>
+  <data name="Woman Perfume" xml:space="preserve">
+    <value>برفانات حريمى</value>
+  </data>
+  <data name="Woman Shirt" xml:space="preserve">
+    <value>تي شيرتات حريمي</value>
+  </data>
+  <data name="Woman Skirt" xml:space="preserve">
+    <value>اكسسوارات حريمي</value>
+  </data>
+  <data name="Woman Sweatshirt" xml:space="preserve">
+    <value>جيبه حريمي </value>
+  </data>
+  <data name="Woman Trousers" xml:space="preserve">
+    <value>بنطلونات حريمي</value>
+  </data>
+  <data name="Woman Tunics" xml:space="preserve">
+    <value>تونيكات حريمي</value>
+  </data>
+  <data name="WOMAN1" xml:space="preserve">
+    <value>حريمي</value>
+  </data>
+  <data name="Women's Day Gifts" xml:space="preserve">
+    <value>هدايا عيد المرأة</value>
+  </data>
   <data name="Your personal data; It will be processed by the data controller Defacto company. You can find detailed information from  Member Clarification Text By clicking the “Sign Up” button you are deemed to have consented to the DeFacto Gift Club Membership Agreement and the processing and transfer of your personal data abroad within the scope of the  Explicit Consent Text" xml:space="preserve">
+    <value>لقد قمت بقراءة وفهم شروط وقواعد استخدام الموقع الإلكترونى وفقا لقانون حماية البيانات الشخصية</value>
+  </data>
+  <data name="Your personal data; It will be processed by the data controller Defacto company. You can find detailed information from  Member Clarification Text By clicking the “Sign Up” button you are deemed to have consented to the DeFacto Gift Club Membership Agreement and the processing and transfer of your personal data abroad within the scope of the  Explicit Consent Text1" xml:space="preserve">
     <value>لقد قمت بقراءة وفهم شروط وقواعد استخدام الموقع الإلكترونى وفقا لقانون حماية البيانات الشخصية</value>
   </data>
 </root>

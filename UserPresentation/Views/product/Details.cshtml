@@ -1,67 +1,268 @@
-﻿@using DTO_s.Product;
-@model ProductDTO;
+﻿@using DTOs.Product
+@model ProductDetailsDTO
 
+@using Microsoft.AspNetCore.Mvc.Localization
+@using System.Globalization
+@inject IViewLocalizer Localizer
+@{
+    ViewData["Title"] = "productInfo";
+    string url = Context.Request.Path;
+    if (url == "/")
+    {
+        url = "/home/index";
+    }
+
+    var lan = "en";
+    var direction = "ltr";
+
+
+
+    if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
+    {
+        lan = "ar";
+        direction = "rtl";
+
+
+    }
+
+}
 @section Styles {
+    @if (lan == "ar")
+    {
+        <link href="~/css/productdetails_ar.css" rel="stylesheet" />
+    }
+    else
+    {
+        <link href="~/css/productdetails.css" rel="stylesheet" />
+    }
     
-    <link href="~/css/productdetails.css" rel="stylesheet" />
 }
 
 <div class="container">
+    <div id="confirmationDialog" class="confirmation-dialog" style="display: none;">
+        <p class="confirmation-message" id="confirmation_text">PRODUCT ADDED TO CART</p>
+        <button id="confirmButton" class="confirm-button">Go To Cart</button>
+    </div>
     <div class="row">
         <div class="col-sm-8">
             <div class="row">
-                <div class="col-sm-6">
-                    <img src="data:image/jpg;base64,@Model.ImagesArr[0]" class="img-fluid" alt="">
-                </div>
-                <div class="col-sm-6">
-                    <img src="data:image/jpg;base64,@Model.ImagesArr[1]" class="img-fluid" alt="" style="margin-left:-20px;">
-                </div>
-            </div>
-            <div class="row mt-1">
-                <div class="col-sm-6">
-                    <img src="data:image/jpg;base64,@Model.ImagesArr[2]" class="img-fluid" alt="">
-                </div>
-                <div class="col-sm-6">
-                    <img src="data:image/jpg;base64,@Model.ImagesArr[3]" class="img-fluid" alt="" style="margin-left:-20px;">
-                </div>
+                @foreach (var image in Model.ImagesArr)
+                {
+                    <div class="col-sm-6">
+                        <img src="data:image/jpg;base64,@image" class="img-fluid" alt="">
+                    </div>
+                }
             </div>
         </div>
         <div class="col-sm-4">
             <div class="content">
-                <pre> @Model.Title <i class="fa fa-heart"></i><br> @Model.CategoryName</pre>
-                <pre id="price">@* @Model.items.FirstOrDefault().Price   *@  <i class="fa fa-share"></i></pre>
-                <h5>Product Code: @Model.Code </h5>
+                @if (lan == "ar")
+                {
+                    <pre> @Model.ar_Title <i class="fa fa-heart"></i></pre>
+                    <strong>@Localizer["Category:"]  </strong> @Model.Category_ar_Name
+                }
+                else
+                {
+                    <pre> @Model.Title <i class="fa fa-heart"></i><br></pre>
+                    <strong>Category: </strong>
+
+                    @Model.CategoryName
+                }
+
+
+                <div id="price"><strong> @Localizer["Price:"] </strong> @Model.items.FirstOrDefault().Price    <i class="fa fa-share"></i></div>
+                <h5><strong>@Localizer["Product Code:"]</strong>  @Model.Code </h5>
 
             </div>
             <div class="fixed-column">
-                <h4>Rate</h4>  @* rate here  *@
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <div>
+                        <h4 id="rate">
+                            @Localizer["Rate :"] <span id="rateMessage">  </span>
+                        </h4>
+                        <div class="rating">
+
+                            <!--elements are in reversed order, to allow "previous sibling selectors" in CSS-->
+                            <input type="radio" name="rating" value="5" id="5"><label for="5">☆</label>
+                            <input type="radio" name="rating" value="4" id="4"><label for="4">☆</label>
+                            <input type="radio" name="rating" value="3" id="3"><label for="3">☆</label>
+                            <input type="radio" name="rating" value="2" id="2"><label for="2">☆</label>
+                            <input type="radio" name="rating" value="1" id="1"><label for="1">☆</label>
+                        </div>
+
+                    </div>
+                }
+
+
+                @* rate here  *@
                 <div style="margin-left: 20px;">
                   
-                    <pre>Size Options        Find My Size-></pre>
-                    <pre>XS    S    M    L    XL    XXL</pre>
-                </div> 
-                <div style="margin-left: 20px;">
-                  
-                    <pre>Color Options        Find My Size-></pre>
-                    <pre>black red green </pre>
+                    <div>
+                        <span class="mx-4">@Localizer["Size Options"] </span>
+                        <span class="mx-4">@Localizer["Find My Color ->"] </span>
+                    </div>
+                    <label for="size-@Model.Id">@Localizer["Color :"]</label>
+                    <div class="product-size-selector__buttons d-flex flex-wrap" title="Please select Color">
+                        @foreach (var item in Model.Colors)
+                        {
+                            <button type="button" title="@item.Name" class="button-reset cross-border-button" aria-describedby=""
+                                    style="background-color:#@item.HEX;border-radius:25px">
+                                <pre> </pre>
+                            </button>
+                        }
+                    </div>
                 </div>
-                <div class="d-grid gap-2 col-6">
-                    <button class="btn btn-cart " type="button"> ADD TO CART </button>
+                <div style="margin-left: 20px;">        
+                    <div>
+                        <span class="mx-4">@Localizer["Color Options"] </span>
+                        <span class="mx-4">@Localizer["Find My Size->"] </span>
+                    </div>
+                    <label for="color-@Model.Id">@Localizer["Size :"]</label>
+
+                    <div class="product-size-selector__buttons d-flex flex-wrap" title="Please select size">
+                        @foreach (var item in Model.Sizes)
+                        {
+                            <button type="button" title="@item.Name" class="button-reset cross-border-button" aria-describedby="">
+                                @item.Code
+                            </button>
+                        }
+                    </div>
+                </div>
+                <div class="d-grid gap-2 col-10">
+                    <div style="text-align:center">
+                        <button class="button button--small add-cart-btn " onclick="addtoCartItems(event,@Model.Id)" type="button">
+                            @Localizer["ADD TO CART"]
+                        </button>
+                    </div>
+
                 </div>
                 <br>
                 <p class="border p-3" style="margin-left: 20px;">
-                    Raffle Campaign Terms and Conditions Click here for more details
+                    @if (lan == "ar")
+                    {
+                        @Model.ar_Description;
+                    }
+                    else
+                    {
+                        @Model.Description;
+                    }
                 </p>
-                <p class="border p-3" style="margin-left: 20px;">
-                    QNB ALAHLI Credit Cards Installment 6 Months |0% Interest |0 Fees
-                </p>
-                <h4 style="margin-left: 20px;">Product Information</h4>
+
+                <h4 style="margin-left: 20px;">@Localizer["Product Information"]</h4>
                 <ul style="margin-left: 20px;">
-                    <li>Model Measurements:Height: 1.73Bust: 81Waist: 61Hips: 89</li>
-                    <li>Sample size: M</li>
-                    <li>Main Fabric Content : Cotton 100%</li>
+                    @if (lan == "ar")
+                    {
+                        <li>@Localizer["Type:"] @Model.Category_ar_Name</li>
+                        <li>@Localizer["Size Sample size:"]@Model.items.FirstOrDefault().SizeCode</li>
+                        <li>@Localizer["Color:-"]@Model.items.FirstOrDefault().ColorName</li>
+                    }
+                    else
+                    {
+                        <li>Type: @Model.CategoryName</li>
+                        <li>Size: Sample size:@Model.items.FirstOrDefault().SizeName</li>
+                        <li>Color: @Model.items.FirstOrDefault().ColorName</li>
+                    }
+
                 </ul>
             </div>
         </div>
     </div>
 </div>
+
+<!-- Product Reviews -->
+
+<div class="container-fluid">
+    <div class="product-detail">
+        <div id="product-reviews" class="product-reviews product-detail__section hidden-sm-down">
+            <div class="product-detail__title">
+                <div class="product-detail__title--head"> @Localizer["Product Rating"]</div>
+            </div>
+            <div class="product-reviews__container d-flex flex-column">
+                <div class="comment-filter d-flex">
+                    <div class="comment-filter-left">
+                        <a href="javascript:;" data-filter="IsCommentWithPhoto"
+                           data-filter-value="0" class="comment-filter-click active">
+                            @Localizer["All Comments"] <span class="product-reviews__list__filter--count">(@Model.productReviewLists.Count)</span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div class="product-reviews__list">
+                    @foreach(var review in Model.productReviewLists)
+                    {
+                        @if (!String.IsNullOrEmpty(review.ReviewMessage))
+                        {
+                            <div class="product-reviews__list--item" data-id="04e1c102-511f-4a24-b949-6fd6d5b27c71">
+                                <div class="product-reviews__list--rating mb-2">
+                                    @if (review.ReviewRate > 0 && review.ReviewRate!= null)
+                                    {
+                                        <ul class="product-rating__star">
+                                            <span class="product-rating__star--percentage star-@review.ReviewRate"></span>
+                                        </ul>
+                                    }
+                                </div>
+                                <div class="product-reviews__list--description mb-3"> @review.ReviewMessage </div>
+
+                                <div class="product-reviews__list--top mb-2 d-flex justify-content-between">
+                                    <div>
+                                        <span class="product-reviews__list--username">@review.CustomerName </span>
+                                      
+                                    </div>
+                                    <div class="d-flex contain-like-unlike">
+                                        <div class="product-reviews__list--like">
+                                            <i class="icon-thumb-up me-2 ms-3"></i> <b class="like"><span>(3)</span> @Localizer["Like Comment"]  </b><b class="liked">@Localizer["You Liked Comment"]</b>
+                                            
+                                        </div>
+                                        <div class="product-reviews__list--unlike">
+                                            <i class="icon-thumb-down"></i>
+                                            <b>
+                                                @Localizer["Comment Not Helpful"] <span>(4)</span>
+                                            </b> 
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                       
+                    }
+                    
+
+                </div> 
+               @if (User.Identity.IsAuthenticated)
+                {
+                    <div class="row justify-content-center" style="text-align:center">
+                        <div class="col-3">
+                            <button class="add-reviwe-btn rounded">@Localizer["Add Review"]</button>
+                        </div>
+
+
+                    </div>
+                    <div class="row">
+                        <div class="collapse" id="collapseExample" style="display:none">
+                            <form asp-action="addReviewForproduct" asp-controller="Review">
+                                <input type="hidden" value="@Model.Id" name="productID" />
+                                <textarea class="review-area" name="ReviewMessage"></textarea>
+                                <input class="btn-confirm rounded mt-3" value="@Localizer["Add"]" type="submit" />
+                            </form>
+
+                        </div>
+                    </div>
+                }   
+               
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    var ID = ''
+
+    ID = '@Model.Id';
+
+
+</script>
+
+@section Scripts {
+    <script src="~/js/productrateandreview.js"></script>
+}

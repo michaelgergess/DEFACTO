@@ -10,10 +10,15 @@ namespace DTOs.Product
 {
     public class ProductFavoriteDTO
     {
-        public int Id { get; set; }
-        public string Title { get; set; }
-        public string Image { get; set; }
-        public decimal price { get; set; }
+        public int Id { get; init; }
+        public string Title { get; init; }
+        public string Image { get; init; }
+        public decimal price { get; init; }
+
+        public List<ItemDto>? items { get; init; }
+
+        public string? ar_Title { get; init; }
+        public string? ar_Description { get; init; }
 
 
 

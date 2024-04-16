@@ -5,7 +5,7 @@ using Application.Service.ItemF;
 using Application.Service.Order;
 using Application.Services;
 using Context;
-using Ecommerce.Application.Services;
+
 using Infrastructure;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity;
@@ -15,6 +15,9 @@ using Microsoft.Extensions.Options;
 using Model;
 using System.Globalization;
 using Stripe;
+using ProductService = Application.Services.ProductService;
+using Application.Service.ItemReviewF;
+
 
 namespace UserPresentation
 {
@@ -33,10 +36,13 @@ namespace UserPresentation
             builder.Services.AddScoped<IItemService, ItemService>();
             builder.Services.AddScoped<IItemRepository, ItemRepository>();
             builder.Services.AddScoped<IitemInOrderRepository, itemInOrderRepository>();
+               
+            builder.Services.AddScoped<IProductReviewService, ProductReviewService>();
+            builder.Services.AddScoped<IProductReviewRepository, ProductReviewRepository>();
 
             builder.Services.AddScoped<IOrderService, OrderService>();
             builder.Services.AddScoped<IOrderRepository, OrderRepository>();
-            builder.Services.AddScoped<IProductService, Ecommerce.Application.Services.ProductService>();
+            builder.Services.AddScoped<IProductService, ProductService>();
             builder.Services.AddScoped<IProductRepository, ProductRepository>();
             builder.Services.AddScoped<IImageRepository, ImageRepository>();
 

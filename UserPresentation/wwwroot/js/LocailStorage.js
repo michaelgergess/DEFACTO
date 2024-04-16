@@ -1,9 +1,34 @@
 ﻿
+
+
+let imgs = document.getElementsByClassName("heartImg");
+let favorites = localStorage.getItem('favorites');
+let oldData = favorites ? JSON.parse(favorites) : [];
+
+
+for (var i = 0; i < imgs.length; i++) {
+    var image = document.getElementsByClassName('heartImg')[i];
+    let index = oldData.indexOf(image.alt);
+    // if localstorage contain image
+    if (index !== -1) {
+      
+        image.src = "/images/img/icon/Blackheart.png";
+
+    }
+    else {
+        image.src = "/images/img/icon/heart.png";
+       
+
+    }
+
+}
+
 function saveFavorites(event, productId) {
     event.preventDefault();
+    let myAnchor = document.getElementById("fav-ids");
+    let myAnchorInsideBar = document.getElementsByClassName("fav-in-sidbar");
 
     let image = document.getElementById('fav-' + productId); 
-    var myAnchor = document.getElementById("fav-ids");  
     let inputId = "i-" + productId;
 
     let d = document.getElementById(inputId).value;
@@ -26,7 +51,9 @@ function saveFavorites(event, productId) {
     
    
     localStorage.setItem('favorites', JSON.stringify(oldData));
-    myAnchor.href = `/Product/Favorite?favorites=${JSON.stringify(oldData)}`;
+
+    myAnchor.value = `${favorites}`;
+    myAnchorInsideBar[0].value = `${favorites}`;
     getFavorites();
 }
     $(document).ready(function() {
@@ -45,3 +72,28 @@ function saveFavorites(event, productId) {
             });
         });
     });
+
+
+function restHeartIcon() {
+    let imgs = document.getElementsByClassName("heartImg");
+    let favorites = localStorage.getItem('favorites');
+    let oldData = favorites ? JSON.parse(favorites) : [];
+
+
+    for (var i = 0; i < imgs.length; i++) {
+        var image = document.getElementsByClassName('heartImg')[i];
+        let index = oldData.indexOf(image.alt);
+        // if localstorage contain image
+        if (index !== -1) {
+
+            image.src = "/images/img/icon/Blackheart.png";
+
+        }
+        else {
+            image.src = "/images/img/icon/heart.png";
+
+
+        }
+
+    }
+}

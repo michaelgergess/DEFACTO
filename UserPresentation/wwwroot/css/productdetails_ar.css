@@ -1,0 +1,365 @@
+﻿.content {
+    padding: 20px;
+}
+
+.fixed-column {
+    position: sticky;
+    top: 10px;
+}
+
+.btn-cart {
+    background-color: black;
+    width: 320px;
+    margin-left: 27px;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .col-sm-8,
+    .col-sm-4 {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+
+.add-cart-btn {
+    margin: 16px 38px !important;
+    width: 100% !important;
+    padding: 5px 10px !important;
+    padding: 0 10px;
+    height: 60px;
+    font-size: 13px;
+    color: #fff;
+    border-radius: 0;
+    background-color: #22242a;
+    border: 1px solid #22242a;
+    transition: all .3s ease
+}
+
+/*shows the stars side by side, centered, and in reverse order than the HMTL*/
+.rating {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+}
+
+    /*hides the radio buttons*/
+    .rating > input {
+        display: none;
+    }
+
+    /*style the empty stars, sets position:relative as base for pseudo-elements*/
+    .rating > label {
+        position: relative;
+       
+        font-size: 3vw;
+        color: #2c2c2b;
+        cursor: pointer;
+    }
+
+        /* sets filled star pseudo-elements */
+        .rating > label::before {
+            content: "\2605";
+            position: absolute;
+            opacity: 0;
+        }
+        /*overlays a filled start character to the hovered element and all previous siblings*/
+        .rating > label:hover:before,
+        .rating > label:hover ~ label:before {
+            opacity: 1 !important;
+        }
+
+    /*overlays a filled start character on the selected element and all previous siblings*/
+    .rating > input:checked ~ label:before {
+        opacity: 1;
+    }
+
+    /*when an element is selected and pointer re-enters the rating container, selected rate and siblings get semi transparent, as reminder of current selection*/
+    .rating:hover > input:checked ~ label:before {
+        opacity: 0.4;
+    }
+
+
+
+@media only screen and (max-width: 600px) {
+    h1 {
+        font-size: 14px;
+    }
+
+    p {
+        font-size: 12px;
+    }
+}
+.product-size-selector__buttons {
+    display: flex;
+    justify-content: flex-start;
+    margin-left: -4px;
+    width: calc(100% + 8px);
+}
+
+    .product-size-selector__buttons button {
+        min-width: 32px;
+        height: 32px;
+        font-size: 14px;
+        margin: 0 8px 16px;
+        padding: 0 8px;
+        text-align: center;
+        transition: all .3s ease;
+        position: relative;
+        border: 1px solid #d8d8d8;
+        color: #22242a;
+    }
+
+ .button-reset {
+    display: inline-flex;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background-color: transparent;
+}
+
+#rate {
+    padding: 0% 6%;
+}
+#rateMessage {
+    font-size: 20px;
+    font-family: math;
+    color: #3a9d3a;
+}
+
+/* add review message */
+.product-detail {
+    position: relative;
+    padding: 2%;
+}
+.product-detail__title {
+    margin-bottom: 27px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    font-size: 1rem;
+    font-family: Mulish, Open Sans, sans-serif;
+    line-height: 1.5;
+    color: #212529;
+}
+.product-detail__title--head {
+    font-size: 24px;
+    box-sizing: border-box;
+}
+.product-reviews__container {
+    width: 100%;
+}
+.flex-column {
+    flex-direction: column !important;
+}
+.d-flex {
+    display: flex !important;
+}
+.product-reviews__container .comment-filter {
+    margin-bottom: 29px;
+}
+.product-reviews__container .comment-filter-left a.active {
+    font-weight: 700;
+}
+.product-reviews__container .comment-filter-left a {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 30px;
+    color: #000;
+    margin-right: 30px;
+    display: inline-flex;
+    position: relative;
+    text-decoration:none;
+}
+.product-reviews__container .comment-filter-left a.active:after {
+    content: "";
+    border-bottom: 3px solid #000;
+    width: 100%;
+    position: absolute;
+    bottom: -8px;
+}
+
+.product-reviews__list--item:first-child {
+    border-top: none;
+    margin-top: 32px;
+    padding-top: 0;
+}
+.product-reviews__list--item {
+    padding-top: 32px;
+    border-top: 1px solid #cbcbcb;
+}
+.product-reviews__list--rating {
+    display: flex;
+    line-height: 17px;
+}
+.product-reviews__list--rating ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: inline-flex;
+}
+.product-rating__star {
+    position: relative;
+    font-size: 13px;
+    display: inline-flex;
+    margin-left: 8px;
+}
+
+
+.product-rating__star::before {
+    color: rgb(199, 198, 203);
+    content: "\2605";
+    font-family: defacto !important;
+}
+.icon-thumb-up::before {
+    font-family: FontAwesome; /* Assuming you've included Font Awesome */
+    content: "\f087"; /* Code for thumbs up icon in Font Awesome */
+    font-size: 14px;
+}
+.icon-thumb-down::before {
+    font-family: FontAwesome;
+    content: "\f165"; /* Code for thumbs down icon in Font Awesome */
+    font-size: 14px;
+
+}
+.product-rating__star--percentage.star-5::before {
+    color: rgb(0, 0, 0);
+    content: "\2605 \2605 \2605 \2605 \2605";
+    font-family: defacto !important;
+}
+
+.product-rating__star--percentage.star-4::before {
+    color: rgb(0, 0, 0);
+    content: "\2605 \2605 \2605 \2605";
+    font-family: defacto !important;
+}
+.product-rating__star--percentage.star-3::before {
+    color: rgb(0, 0, 0);
+    content: "\2605 \2605 \2605";
+    font-family: defacto !important;
+}
+.product-rating__star--percentage.star-2::before {
+    color: rgb(0, 0, 0);
+    content: "\2605 \2605";
+    font-family: defacto !important;
+}
+.product-rating__star--percentage.star-1::before {
+    color: rgb(0, 0, 0);
+    content: "\2605";
+    font-family: defacto !important;
+}
+
+.product-rating__star--percentage {
+    position: absolute;
+    overflow: hidden;
+    width: 93px;
+    font-size: 20px;
+}
+.product-reviews__list--description {
+    font-size: 13px;
+    font-weight: 300;
+}
+
+.product-reviews__list--username {
+    font-size: 12px;
+    font-weight: 600;
+    color: #97959e;
+}
+.product-reviews__list--username:after {
+    content: "|";
+    margin: 0 8px;
+}
+
+.product-reviews__list--date {
+    font-size: 12px;
+    color: #908e97;
+}
+.product-reviews__list--like {
+    font-size: 13px;
+    font-weight: 700;
+    display:flex;
+    flex-direction:row-reverse;
+}
+.product-reviews__list--like i {
+    cursor: pointer;
+    margin-right: 8px;
+    font-family: defacto !important;
+    speak: never;
+    font-style: normal;
+    font-weight: 400;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+    .product-reviews__list--like b {
+        font-size: 13px;
+        font-weight: 700;
+        cursor: pointer;
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    .product-reviews__list--like .liked {
+        display: none;
+    }
+
+.product-reviews__list--unlike {
+    font-size: 13px;
+    font-weight: 700;
+    margin-left: 32px;
+    display: flex;
+    flex-direction: row-reverse;
+}
+    .product-reviews__list--unlike i {
+        cursor: pointer;
+        margin-right: 8px;
+        font-family: defacto !important;
+        speak: never;
+        font-style: normal;
+        font-weight: 400;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+    }
+.contain-like-unlike{
+    display:flex;
+    flex-direction:row-reverse;
+}
+.add-reviwe-btn {
+    padding: 0 10px;
+    text-align: center;
+    height: 60px;
+    font-size: 20px;
+    color: #fff !important;
+    border-radius: 0;
+    background-color: #22242a;
+    border: 1px solid #22242a;
+    transition: all .3s ease;
+    text-decoration: none;
+}
+.btn-confirm {
+    padding: 0 10px;
+    text-align: center;
+    height: 60px;
+    font-size: 20px;
+    color: #fff !important;
+    border-radius: 0;
+    background-color: #22242a;
+    border: 1px solid #22242a;
+}
+    .add-reviwe-btn :hover, .add-reviwe-btn:focus {
+        color: #22242a !important;
+        background-color: #ffff !important;
+    }
+.review-area {
+    resize: vertical;
+    width: 100%;
+    /* margin: 9%; */
+    margin-top: 2%;
+}

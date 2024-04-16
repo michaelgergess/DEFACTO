@@ -54,9 +54,17 @@ namespace UserPresentation.Controllers
       
 
         [HttpPost]
-        public IActionResult SetLanguage(string culture, string returnUrl)
+        public IActionResult SetLanguage(string culture, string returnUrl,int? ID)
         {
-
+            if(returnUrl == "~/Product/Favorite")
+            {
+                return RedirectToAction("Index", "Home");   
+            }
+            if(ID!=null && ID >= 0)
+            {
+                TempData["ProductID"] = ID;
+            }
+          
             Response.Cookies.Append(
                 CookieRequestCultureProvider.DefaultCookieName,
                 CookieRequestCultureProvider.MakeCookieValue(new RequestCulture(culture)),

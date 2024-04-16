@@ -33,17 +33,19 @@
         <div class="row">
             <div class="col-lg-6 col-md-6 col-sm-6">
                 <div class="shop__product__option__left">
-                <p>Showing : @Model.resultDataList.Count results</p>
+                    <p>  @Localizer["Showing"] @Model.resultDataList.Count @Localizer["results"]</p>
                 </div>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-6">
                 <div class="shop__product__option__right">
-                   
-                    <p>Sort by Price:</p>
-                    <select>
-                        <option value="">Low To High</option>
+
+                    <p> @Localizer["SortByprice"] </p>
+                    <select class="price-sort">
+                        <option value=""> @Localizer["Low_to_high"]</option>
                         <option value="">$0 - $55</option>
                         <option value="">$55 - $100</option>
+                        <option value="">$100 - $150</option>
+                        <option value="">$150 - $200</option>
                     </select>
                 </div>
             </div>
@@ -63,10 +65,10 @@
                             <input type="hidden" id="i-@pro.Id" value="@pro.Id">
                             <ul class="product__hover">
                                 <li Id="FAV-LI">
-                                    <img src="~/images/img/icon/heart.png" onclick="saveFavorites(event,@pro.Id)" id="fav-@pro.Id" alt="" />
+                                    <img class="heartImg" src="~/images/img/icon/heart.png" onclick="saveFavorites(event,@pro.Id)" id="fav-@pro.Id" alt="@pro.Id" />
                                 </li>
                                 <li>
-                                    <img src="~/images/img/icon/quick-add-to-cart.png" alt="Add To Cart" />
+                                    <img src="~/images/img/icon/quick-add-to-cart.png" alt="Add To Cart" onclick="saveCartItems(event,@pro.Id)" class="add-cart" />
                                 </li>
                             </ul>
                         </div>
@@ -146,3 +148,8 @@
 
     </div>
 </div>
+   <script>
+        $(document).ready(function () {
+         restHeartIcon();
+        });
+    </script>

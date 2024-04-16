@@ -26,6 +26,7 @@
         
     }
 
+  
 }
 @section Styles {
 
@@ -63,6 +64,11 @@
         </div>
     </div>
 </section>
+<div id="confirmationDialog" class="confirmation-dialog" style="display: none;">
+    <p class="confirmation-message" id="confirmation_text">@Localizer["PRODUCT ADDED"]</p>
+    <button id="confirmButton" class="confirm-button">@Localizer["Go To Cart"]</button>
+</div>
+
 <!-- Breadcrumb Section End -->
 <!-- Shop Section Begin -->
 <section class="shop spad">
@@ -402,11 +408,7 @@
             </div>
             @* partial here  *@
 
-            <div id="confirmationDialog" class="confirmation-dialog" style="display: none;">
-                <p class="confirmation-message" id="confirmation_text">PRODUCT ADDED TO CART</p>
-                <button id="confirmButton" class="confirm-button">Go To Cart</button>
-            </div>
-
+         
             <div class="col-lg-9" id="partial">
 
 
@@ -421,7 +423,7 @@
                             <div class="shop__product__option__right">
 
                                 <p> @Localizer["SortByprice"] </p>
-                                <select>
+                                <select class="price-sort">
                                     <option value=""> @Localizer["Low_to_high"]</option>
                                     <option value="">$0 - $55</option>
                                     <option value="">$55 - $100</option>
@@ -446,23 +448,23 @@
                                           <div class="product__item__pic set-bg" style="background-image: url(data:image/jpg;base64,@pro.Image); max-height:400px" alt="Red dot">
                                             <ul class="product__hover">
                                                 <li Id="FAV-LI">
-                                                   <img src="~/images/img/icon/heart.png" onclick="saveFavorites(event,@pro.Id)" id="fav-@pro.Id" alt="" />
+                                                    
+                                                   <img class="heartImg" src="~/images/img/icon/heart.png" onclick="saveFavorites(event,@pro.Id)"  id="fav-@pro.Id" alt="@pro.Id" />
                                                 </li>
                                                 <li>
-                                                    <a onclick="saveCartItems(event,@pro.Id)" class="add-cart" href="#">
-                                                        <img src="~/images/img/icon/quick-add-to-cart.png" alt="Add To Cart" />
-                                                    </a>
+                                                  
+                                                    <img src="~/images/img/icon/quick-add-to-cart.png" alt="Add To Cart" onclick="saveCartItems(event,@pro.Id)" class="add-cart" />
+                                                    
                                                 </li>
                                             </ul>
                                         </div>
                                         <div class="product__item__text">
-                                        @if (lan == "ar")
-                                        {
-                                            <h6> @pro.ar_Title</h6>
-                                        }else{
-                                          <h6> @pro.Title</h6>
-                                        }
-
+                                            @if (lan == "ar")
+                                            {
+                                                <h6> @pro.ar_Title</h6>
+                                            }else{
+                                              <h6> @pro.Title</h6>
+                                            }
                                             <h5>$@(pro.items.Any() ? pro.items.FirstOrDefault().Price : " no price yet ")</h5>
                                             <div class="product__color__select">
                                                 @foreach (var item in pro.items)
@@ -547,6 +549,8 @@
 </script>
 
 @section Scripts {
+    
+    <script src="~/js/getfavorites.js"></script>
     <script src="~/js/LocailStorage.js"></script>
     <script src="~/js/filter.js"></script>
     <script src="~/js/cart.js"></script>

@@ -36,7 +36,6 @@ function changeLanguage() {
 }
 
 
-
 // login and register templeate 
 /*
 var logbtning = document.getElementById("logid");
@@ -108,4 +107,20 @@ contactMethodRadios.forEach(radio => {
 
 
 
+var form  = document.getElementById("fav-form");
+var form0 = document.getElementById("fav-form-0");
 
+document.getElementById("button-formLink").addEventListener("click", function () {
+    form.submit();
+});
+document.getElementById("button-formLink-0").addEventListener("click", function () {
+    form.submit();
+});
+var favoritesIdlist = localStorage.getItem("favorites");
+
+let myAnchor = document.getElementById("fav-ids");
+let myAnchorInsideBar = document.getElementsByClassName("fav-in-sidbar");
+/*myAnchor.href = `/Product/Favorite?favorites=${favoritesIdlist}`;*/
+/*myAnchorInsideBar[0].href = `/Product/Favorite?favorites=${favoritesIdlist}`;*/
+myAnchor.value = `${favoritesIdlist}`;
+myAnchorInsideBar[0].value = `${favoritesIdlist}`;

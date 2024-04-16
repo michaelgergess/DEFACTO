@@ -117,7 +117,55 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Berts" xml:space="preserve">
+    <value>بنات القبعات النماذج</value>
+  </data>
+  <data name="Favorite" xml:space="preserve">
+    <value>المفضلات</value>
+  </data>
+  <data name="Homewear" xml:space="preserve">
+    <value>ملابس أطفالي منزلية</value>
+  </data>
+  <data name="Jeans" xml:space="preserve">
+    <value>ملابس جينز</value>
+  </data>
+  <data name="Kids Jackets" xml:space="preserve">
+    <value>جواكيت أطفالي</value>
+  </data>
+  <data name="Kids Shoes" xml:space="preserve">
+    <value>أحذية أطفالي</value>
+  </data>
+  <data name="Kids Studio" xml:space="preserve">
+    <value>مجموعة الاستوديو</value>
+  </data>
+  <data name="Last Visited" xml:space="preserve">
+    <value>آخر منتجات شاهدتها</value>
+  </data>
+  <data name="Outerwears" xml:space="preserve">
+    <value>ملابس أطفالي خارجية</value>
+  </data>
   <data name="POPULAR" xml:space="preserve">
     <value>الفئات الشعبية</value>
+  </data>
+  <data name="Ramadan Sale" xml:space="preserve">
+    <value>عروض رمضان</value>
+  </data>
+  <data name="Shirts" xml:space="preserve">
+    <value>تي شيرتات أطفالي</value>
+  </data>
+  <data name="Special Products For You" xml:space="preserve">
+    <value>منتجات خاصة لك</value>
+  </data>
+  <data name="Sweatpants" xml:space="preserve">
+    <value>بناطيل رياضية أطفالي</value>
+  </data>
+  <data name="SweatShirts" xml:space="preserve">
+    <value>بلوزرات أطفالي</value>
+  </data>
+  <data name="Trousers" xml:space="preserve">
+    <value>بناطيل أطفالي</value>
+  </data>
+  <data name="Where are you looking for this?" xml:space="preserve">
+    <value>أين تبحث عن هذا؟</value>
   </data>
 </root>

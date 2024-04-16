@@ -418,13 +418,13 @@ ol {
 
 .header__menu {
     text-align: center;
-    padding: 30px 0px 18px;
+    padding: 11% 10% 23px;
 }
 
     .header__menu ul li {
         list-style: none;
         display: inline-block;
-        margin-right: 11px;
+        margin-right:4%;
         position: relative;
     }
 
@@ -3381,6 +3381,37 @@ ol {
 /*--------------------------------- Responsive Media Quaries -----------------------------*/
 
 @media only screen and (min-width: 1200px) {
+    .confirmation-dialog {
+        margin-left: 1%;
+        text-align: center;
+        position: fixed;
+        width: 16%;
+        top: 25%;
+        left: 0;
+        background-color: lightgrey;
+        padding: 20px;
+        border-radius: 8px;
+        z-index: 1000;
+    }
+
+    .confirmation-message {
+        margin-bottom: 10px;
+        font-size: 15px;
+        font-family: serif;
+        color: #3d3d3d;
+        font-weight: 400;
+        line-height: 17px;
+        margin: 0px 0 3px 0;
+    }
+
+    .confirm-button {
+        padding: 7px 29px;
+        cursor: pointer;
+        background-color: black;
+        color: white;
+        border: none;
+        text-align: center;
+    }
     .container {
         max-width: 1170px;
     }
@@ -3389,6 +3420,19 @@ ol {
 /* Medium Device = 1200px */
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .price-sort {
+        word-wrap: normal;
+        /* width: 100%; */
+        font-size: 12px;
+        color: #b7b7b7;
+        padding-left: 15px;
+        border: 1px solid #ededed;
+        height: 31px;
+        padding-right: 11px;
+        direction: ltr;
+    }
+
+
     .categories__text h2 {
         font-size: 26px;
     }
@@ -3396,7 +3440,7 @@ ol {
     .header__menu ul li {
         list-style: none;
         display: inline-block;
-        margin-right: 12px;
+        margin-right: 4%;
         text-align: center;
         margin: 0px 5px 0 6px;
     }
@@ -3417,6 +3461,18 @@ ol {
 /* Tablet Device = 768px */
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
+
+    .price-sort {
+        word-wrap: normal;
+        /* width: 100%; */
+        font-size: 12px;
+        color: #b7b7b7;
+        padding-left: 15px;
+        border: 1px solid #ededed;
+        height: 31px;
+        padding-right: 11px;
+        direction: ltr;
+    }
     .header__menu ul li {
         margin-right: 10px;
     }
@@ -3509,6 +3565,47 @@ ol {
  * (c) 2016 Josh Cope
  * licensed under MIT
  */
+    .price-sort {
+        word-wrap: normal;
+        /* width: 100%; */
+        font-size: 12px;
+        color: #b7b7b7;
+        padding-left: 15px;
+        border: 1px solid #ededed;
+        height: 31px;
+        padding-right: 11px;
+        direction: ltr;
+    }
+    .confirmation-dialog {
+        margin-left: 2%;
+        text-align: center;
+        position: fixed;
+        width: 30%;
+        top: 25%;
+        left: 0;
+        background-color: lightgrey;
+        padding: 20px;
+        border-radius: 8px;
+        z-index: 1000;
+    }
+
+    .confirmation-message {
+        font-size: 11px;
+        font-family: serif;
+        color: #3d3d3d;
+        font-weight: 300;
+        line-height: 15px;
+        margin: 0px 0 3px 0;
+    }
+
+    .confirm-button {
+        padding: 2px 8px;
+        cursor: pointer;
+        background-color: black;
+        color: white;
+        border: none;
+        text-align: center
+    }
 
     .mini-basket-count {
         left: unset;
@@ -3803,6 +3900,7 @@ ol {
             margin: 0;
             color: #111111;
             font-weight: 600;
+            font-size:15px
         }
 
         .slicknav_nav .slicknav_arrow {
@@ -4449,4 +4547,8 @@ ol {
 }
 #FAV-LI {
     margin-bottom: 295px;
+}
+
+.payment-icon {
+    display: flex;
 }

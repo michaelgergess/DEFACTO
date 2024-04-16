@@ -1,6 +1,32 @@
 ﻿@using DTOs.Product
 @model List<ProductFavoriteDTO>
+@using Microsoft.AspNetCore.Mvc.Localization
+@using System.Globalization
+@inject IViewLocalizer Localizer
+@{
+  
+    string url = Context.Request.Path;
+    if (url == "/")
+    {
+        url = "/home/index";
+    }
 
+    var lan = "en";
+    var direction = "ltr";
+    var arrowNext = "right";
+    var arrowPerv = "left";
+
+
+    if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
+    {
+        lan = "ar";
+        direction = "rtl";
+        arrowNext = "left";
+        arrowPerv = "right";
+
+    }
+
+}
 <div class="container">
     <div class="row">
        
@@ -8,12 +34,11 @@
             @if (Model.Count > 0)
             {
                 <div id="confirmationDialog" class="confirmation-dialog" style="display: none;">
-                    <p class="confirmation-message" id="confirmation_text">PRODUCT ADDED TO CART</p>
+                    <p class="confirmation-message" id="confirmation_text">@Localizer["PRODUCT ADDED"]</p>
                     <form id="cartForm" action="@Url.Action("Cart", "Product")" method="get">
-                        <button type="submit" id="confirmButton" class="confirm-button">Go To Cart</button>
+                        <button type="submit" id="confirmButton" class="confirm-button">@Localizer["Go To Cart"]</button>
                     </form>
                 </div>
-
                 <div class="row">
                     @foreach (var pro in Model)
                     {
@@ -22,7 +47,7 @@
                                 <div class="product__item__pic set-bg" style="background-image: url(data:image/jpg;base64,@pro.Image)" alt="Product Image">
                                     <input type="hidden" id="i-@pro.Id" value="@pro.Id"> <!-- Unique id for each input -->
                                     <ul class="product__hover">
-                                        <li>
+                                        <li Id="FAV-LI">
                                             <a href="#" onclick="saveFavorites(event,@pro.Id)">
                                                 <img src="~/images/img/icon/Blackheart.png" id="fav-@pro.Id" alt="Add to Favorites" />
                                             </a>
@@ -35,8 +60,25 @@
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
-                                    <h6>@pro.Title</h6>
+                                    @if (lan == "ar")
+                                    {
+                                        <h6> @pro.ar_Title</h6>
+                                    }
+                                    else
+                                    {
+                                        <h6> @pro.Title</h6>
+                                    }
                                     <h5>$@(pro.price != 0 ? pro.price : "Price not available")</h5>
+                                    <div class="product__color__select">
+                                        @foreach (var item in pro.items)
+                                        {
+                                            <label for="pc-4" style="background-color:#@item.ColorHEX">
+                                                <input type="radio" id="pc-4">
+
+                                            </label>
+                                        }
+
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -46,8 +88,8 @@
             else
             {
                 <div class="text-center mt-5">
-                    <h3>There are no products in your favorites.</h3>
-                    <button type="button" class="btn btn-dark">Start shopping</button>
+                    <h3>@Localizer["There are no products"]</h3>
+                    <button type="button" class="btn btn-dark" asp-action="ProductsFilter" asp-controller="product">@Localizer["Start shopping"]</button>
                 </div>
             }
         </div>

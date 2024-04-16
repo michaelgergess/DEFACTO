@@ -117,13 +117,154 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="acc1" xml:space="preserve">
+    <value>/images/men/acc1-en.webp</value>
+  </data>
+  <data name="acc2" xml:space="preserve">
+    <value>/images/men/acc2-en.webp</value>
+  </data>
+  <data name="acc3" xml:space="preserve">
+    <value>/images/men/acc3-en.webp</value>
+  </data>
+  <data name="acc4" xml:space="preserve">
+    <value>/images/men/acc4-en.webp</value>
+  </data>
+  <data name="ACCESSORY &amp; FOOTWEAR" xml:space="preserve">
+    <value>ACCESSORY &amp; FOOTWEAR</value>
+  </data>
+  <data name="Berts" xml:space="preserve">
+    <value>Berts</value>
+  </data>
+  <data name="Favorite" xml:space="preserve">
+    <value>Favorite</value>
+  </data>
+  <data name="Homewear" xml:space="preserve">
+    <value>Homewear</value>
+  </data>
+  <data name="img1" xml:space="preserve">
+    <value>/images/men/img1-en.webp</value>
+  </data>
+  <data name="img10" xml:space="preserve">
+    <value>/images/men/imgslide3-en.webp</value>
+  </data>
+  <data name="img11" xml:space="preserve">
+    <value>/images/men/imgslide4-en.webp</value>
+  </data>
+  <data name="img12" xml:space="preserve">
+    <value>/images/men/12-en.webp</value>
+  </data>
+  <data name="img13" xml:space="preserve">
+    <value>/images/men/13-en.webp</value>
+  </data>
+  <data name="img14" xml:space="preserve">
+    <value>/images/men/14-en.webp</value>
+  </data>
+  <data name="img15" xml:space="preserve">
+    <value>/images/men/15-en.webp</value>
+  </data>
+  <data name="img16" xml:space="preserve">
+    <value>/images/men/slide2man1-en.webp</value>
+  </data>
+  <data name="img17" xml:space="preserve">
+    <value>/images/men/slide2man2-en.webp</value>
+  </data>
+  <data name="img18" xml:space="preserve">
+    <value>/images/men/18-en.webp</value>
+  </data>
+  <data name="img19" xml:space="preserve">
+    <value>/images/men/19-en.webp</value>
+  </data>
+  <data name="img2" xml:space="preserve">
+    <value>/images/men/img2-en.webp</value>
+  </data>
+  <data name="img20" xml:space="preserve">
+    <value>/images/men/20-en.webp</value>
+  </data>
+  <data name="img21" xml:space="preserve">
+    <value>/images/men/21-en.webp</value>
+  </data>
+  <data name="img22" xml:space="preserve">
+    <value>/images/men/22-en.webp</value>
+  </data>
+  <data name="img23" xml:space="preserve">
+    <value>/images/men/23-en.webp</value>
+  </data>
+  <data name="img3" xml:space="preserve">
+    <value>/images/men/img3-en.webp</value>
+  </data>
+  <data name="img4" xml:space="preserve">
+    <value>/images/men/img4-en.webp</value>
+  </data>
+  <data name="img5" xml:space="preserve">
+    <value>/images/men/img5-en.webp</value>
+  </data>
+  <data name="img6" xml:space="preserve">
+    <value>/images/men/men1-en.webp</value>
+  </data>
+  <data name="img7" xml:space="preserve">
+    <value>/images/men/men2-en.webp</value>
+  </data>
+  <data name="img8" xml:space="preserve">
+    <value>/images/men/imgslide1-en.webp</value>
+  </data>
+  <data name="img9" xml:space="preserve">
+    <value>/images/men/imgslide2-en.webp</value>
+  </data>
+  <data name="Jeans" xml:space="preserve">
+    <value>Jeans</value>
+  </data>
+  <data name="Last Visited" xml:space="preserve">
+    <value>Last Visited</value>
+  </data>
+  <data name="Man Jackets" xml:space="preserve">
+    <value>Man Jackets</value>
+  </data>
+  <data name="Man Shoes" xml:space="preserve">
+    <value>Man Shoes</value>
+  </data>
+  <data name="Man Studio" xml:space="preserve">
+    <value>Man Studio</value>
+  </data>
+  <data name="Outerwears" xml:space="preserve">
+    <value>Outerwears</value>
+  </data>
+  <data name="POPULAR CATEGORIES" xml:space="preserve">
+    <value>POPULAR CATEGORIES</value>
+  </data>
+  <data name="Ramdan Sale" xml:space="preserve">
+    <value>Ramdan Sale</value>
+  </data>
+  <data name="Shirts" xml:space="preserve">
+    <value>Shirts</value>
+  </data>
+  <data name="slide3im1" xml:space="preserve">
+    <value>/images/men/slide3im1.gif</value>
+  </data>
+  <data name="slide3im2" xml:space="preserve">
+    <value>/images/men/slide3im-en.webp</value>
+  </data>
+  <data name="Special Products For You" xml:space="preserve">
+    <value>Special Products For You</value>
+  </data>
   <data name="string" xml:space="preserve">
     <value />
+  </data>
+  <data name="Sweatpants" xml:space="preserve">
+    <value>Sweatpants</value>
+  </data>
+  <data name="SweatShirts" xml:space="preserve">
+    <value>SweatShirts</value>
   </data>
   <data name="THE_COUNTDOWN_TO_RAMADAN_HAS_BEGUN" xml:space="preserve">
     <value>The countdown to Ramadan has begun!</value>
   </data>
   <data name="THE_SEASONS_TOP_PICKS" xml:space="preserve">
     <value>The season's top picks!</value>
+  </data>
+  <data name="Trends" xml:space="preserve">
+    <value>Trends</value>
+  </data>
+  <data name="Trousers" xml:space="preserve">
+    <value>Trousers</value>
   </data>
 </root>

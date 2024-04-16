@@ -28,8 +28,6 @@ namespace AdminAndVendordashboard.Controllers
             }
             return Ok(model);
         }
-
-
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
